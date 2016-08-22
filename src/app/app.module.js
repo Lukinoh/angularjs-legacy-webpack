@@ -1,9 +1,9 @@
-import "./core/core.module.js";
-import "./widgets/widgets.module";
-import "./dashboard/dashboard.module";
+import appCore from "./core/core.module.js";
+import appWidgets from "./widgets/widgets.module";
+import appDashboard from "./dashboard/dashboard.module";
 
 angular.module('app', [
-    'app.core',
-    'app.widgets',
-    'app.dashboard'
+    appCore,
+    appWidgets,
+    appDashboard
 ]);

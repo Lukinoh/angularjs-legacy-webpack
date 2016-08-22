@@ -2,12 +2,13 @@ import ngRoute from "angular-route";
 import toastr from "toastr";
 import _ from "lodash";
 import setRoute from "./core.route";
-import "../blocks/logger/logger.module";
+import blocksLogger from "../blocks/logger/logger.module";
 
-angular.module('app.core', [
-    'blocks.logger',
+export default angular.module('app.core', [
+    blocksLogger,
     ngRoute
 ])
     .config(setRoute)
     .constant('toastr', toastr)
-    .constant('_', _);
+    .constant('_', _)
+    .name;
