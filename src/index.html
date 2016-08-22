@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../node_modules/toastr/build/toastr.min.css" />
+    <link rel="stylesheet" href="app/widgets/rating/rating.directive.css" />
+</head>
+<body>
+
+<div ng-view>
+</div>
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-route/angular-route.min.js"></script>
+<script src="../node_modules/lodash/lodash.min.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/toastr/build/toastr.min.js"></script>
+
+<script src="app/app.module.js"></script>
+<script src="app/core/core.module.js"></script>
+<script src="app/blocks/logger/logger.module.js"></script>
+<script src="app/widgets/widgets.module.js"></script>
+<script src="app/widgets/rating/rating.module.js"></script>
+<script src="app/dashboard/dashboard.module.js"></script>
+
+<script src="app/core/constants.js"></script>
+
+<script src="app/core/core.route.js"></script>
+<script src="app/dashboard/dashboard.route.js"></script>
+
+
+<script src="app/blocks/logger/logger.js"></script>
+
+<script src="app/widgets/rating/rating.directive.js"></script>
+
+<script src="app/dashboard/dashboard.controller.js"></script>
+
+<script id="__bs_script__">//<![CDATA[
+document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.14.0.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+
+</body>
+</html>
