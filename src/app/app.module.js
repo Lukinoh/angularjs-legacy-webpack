@@ -7,4 +7,6 @@
         'app.dashboard'
     ]);
 
+    const t = () => { console.log('hello')};
+
 })();
