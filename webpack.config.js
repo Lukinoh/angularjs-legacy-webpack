@@ -44,8 +44,8 @@ const common = {
 
         // Unlike the cli flag, this doesn't set
         // HotModuleReplacementPlugin!
-        hot: true,
-        inline: true,
+        // hot: true,
+        // inline: true,
 
         // Display only errors to reduce the amount of output.
         stats: 'errors-only',
@@ -63,9 +63,9 @@ const common = {
     plugins: [
         // Enable multi-pass compilation for enhanced performance
         // in larger projects. Good default.
-        new webpack.HotModuleReplacementPlugin({
-            multiStep: true
-        }),
+        // new webpack.HotModuleReplacementPlugin({
+        //     multiStep: true
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']
         }),

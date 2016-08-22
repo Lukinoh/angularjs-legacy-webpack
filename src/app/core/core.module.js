@@ -1,14 +1,13 @@
 import ngRoute from "angular-route";
-import blocksLogger from "../blocks/logger/logger.module";
+import toastr from "toastr";
+import _ from "lodash";
+import setRoute from "./core.route";
+import "../blocks/logger/logger.module";
 
-import "./constants.js"
-import "./core.route.js"
-
-(function () {
-    'use strict';
-
-    angular.module('app.core', [
-            blocksLogger,
-            ngRoute
-        ]);
-})();
+angular.module('app.core', [
+    'blocks.logger',
+    ngRoute
+])
+    .config(setRoute)
+    .constant('toastr', toastr)
+    .constant('_', _);

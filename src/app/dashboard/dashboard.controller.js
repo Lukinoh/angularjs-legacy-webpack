@@ -1,21 +1,15 @@
-(function() {
-    'use strict';
+export default DashboardController;
 
-    angular
-        .module('app.dashboard')
-        .controller('DashboardController', DashboardController);
+// DashboardController.$inject = ['logger'];
 
-    DashboardController.$inject = ['logger'];
+/* @ngInject */
+function DashboardController(logger) {
+    var vm = this;
+    vm.title = 'Dashboard';
 
-    /* @ngInject */
-    function DashboardController(logger) {
-        var vm = this;
-        vm.title = 'Dashboard';
+    activate();
 
-        activate();
-
-        function activate() {
-            logger.info('my message', {error: 'test'}, 'my title');
-        }
+    function activate() {
+        logger.info('my message', {error: 'test'}, 'my title');
     }
-})();
+}

@@ -1,19 +1,15 @@
-(function () {
-    'use strict';
+import dashboardHtml from "./dashboard.controller.html";
 
-    angular
-        .module('app.dashboard')
-        .config(setRoute);
+export default setRoute;
 
-    /* @ngInject */
-    function setRoute($routeProvider) {
+/* @ngInject */
+function setRoute($routeProvider) {
 
-        $routeProvider
-            .when('/dashboard', {
-                templateUrl: '/app/dashboard/dashboard.controller.html',
-                controller: 'DashboardController',
-                controllerAs: 'vm',
-                reloadOnSearch: false
-            })
-    }
-})();
+    $routeProvider
+        .when('/dashboard', {
+            template: dashboardHtml,
+            controller: 'DashboardController',
+            controllerAs: 'vm',
+            reloadOnSearch: false
+        })
+}

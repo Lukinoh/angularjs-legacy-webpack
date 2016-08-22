@@ -1,14 +1,8 @@
-(function() {
-    'use strict';
+export default setRoute;
 
-    angular
-        .module('app.core')
-        .config(setRoute);
-
-    /* @ngInject */
-    function setRoute($routeProvider) {
-        $routeProvider.otherwise({
-            redirectTo: '/dashboard'
-        });
-    }
-})();
+/* @ngInject */
+function setRoute($routeProvider) {
+    $routeProvider.otherwise({
+        redirectTo: '/dashboard'
+    });
+}

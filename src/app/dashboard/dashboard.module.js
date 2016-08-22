@@ -1,10 +1,6 @@
-import "./dashboard.route.js";
-import "./dashboard.controller.html";
-import "./dashboard.controller.js";
+import DashboardController from "./dashboard.controller.js";
+import setRoute from "./dashboard.route";
 
-(function() {
-    'use strict';
-
-    angular.module('app.dashboard', [
-    ]);
-})();
+angular.module('app.dashboard', [])
+    .config(setRoute)
+    .controller('DashboardController', DashboardController);
