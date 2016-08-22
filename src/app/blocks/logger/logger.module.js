@@ -1,3 +1,5 @@
+import "./logger.js";
+
 (function() {
     'use strict';
 

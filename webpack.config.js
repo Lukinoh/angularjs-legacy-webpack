@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const validate = require('webpack-validator');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 const PATHS = {
@@ -27,9 +28,14 @@ const common = {
                     presets: ['es2015'],
                     compact: false
                 }
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader',
             }
         ]
     },
+    devtool: 'source-map',
     devServer: {
         // Enable history API fallback so HTML5 History API based
         // routing works. This is a good default that will come
@@ -66,6 +72,11 @@ const common = {
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             chunksSortMode: 'dependency'
+        }),
+        new CleanWebpackPlugin([PATHS.build], {
+            // Without `root` CleanWebpackPlugin won't point to our
+            // project and will fail to work.
+            root: process.cwd()
         })
     ]
 };
