@@ -1,4 +1,3 @@
-/* @ngInject */
 export default class DashboardClassController {
     constructor(logger) {
         this.title = 'Dashboard Class';
@@ -9,4 +8,6 @@ export default class DashboardClassController {
     activate() {
         this.logger.info('my message', {error: 'test'}, 'my title');
     }
+
+    // No more private function, only public
 }
