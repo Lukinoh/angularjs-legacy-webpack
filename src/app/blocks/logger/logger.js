@@ -1,7 +1,5 @@
 export default logger;
 
-// logger.$inject = ['$log', 'toastr'];
-
 /* @ngInject */
 function logger($log, toastr) {
     var service = {

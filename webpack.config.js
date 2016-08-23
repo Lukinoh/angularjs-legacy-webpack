@@ -19,8 +19,13 @@ const common = {
         path: PATHS.build,
         filename: '[name].js'
     },
+    // http://survivejs.com/webpack/loading-assets/loader-definitions/ Loader Evoluation Order is important
     module: {
         loaders: [
+            {
+                test: /\.js$/,
+                loader: 'ng-annotate-loader',
+            },
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -77,6 +82,11 @@ const common = {
             // Without `root` CleanWebpackPlugin won't point to our
             // project and will fail to work.
             root: process.cwd()
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
         })
     ]
 };

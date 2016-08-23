@@ -1,7 +1,5 @@
 export default DashboardController;
 
-// DashboardController.$inject = ['logger'];
-
 /* @ngInject */
 function DashboardController(logger) {
     var vm = this;
