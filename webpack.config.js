@@ -3,6 +3,8 @@ const path = require('path');
 const validate = require('webpack-validator');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+
 
 
 const PATHS = {
@@ -23,7 +25,7 @@ const common = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.js|.ts$/,
                 loader: 'ng-annotate-loader',
             },
             {
@@ -33,6 +35,10 @@ const common = {
                     presets: ['es2015'],
                     compact: false
                 }
+            },
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader'
             },
             {
                 test: /\.html$/,
@@ -87,7 +93,8 @@ const common = {
             compress: {
                 warnings: false
             }
-        })
+        }),
+        new ForkCheckerPlugin()
     ]
 };
 

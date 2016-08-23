@@ -2,13 +2,15 @@ import appCore from "./core/core.module.js";
 import appWidgets from "./widgets/widgets.module";
 import appDashboard from "./dashboard/dashboard.module";
 import appDashboardClass from "./dashboard-class/dashboard-class.module";
+import appDashboardTs from "./dashboard-ts/dashboard-ts.module.ts";
 
 export default angular
     .module('app', [
         appCore,
         appWidgets,
         appDashboard,
-        appDashboardClass
+        appDashboardClass,
+        appDashboardTs
     ])
     .name;
 
