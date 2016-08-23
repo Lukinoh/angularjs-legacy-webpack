@@ -8,6 +8,6 @@ function DashboardController(logger) {
     activate();
 
     function activate() {
-        logger.info('my message', {error: 'test'}, 'my title');
+        logger.info('Dashboard Controller Activated !', {}, 'Status');
     }
 }
