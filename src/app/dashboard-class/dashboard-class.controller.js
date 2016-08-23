@@ -1,5 +1,3 @@
-import './dashboard-class.controller.css';
-
 export default class DashboardClassController {
     constructor(logger) {
         'ngInject'; // The old manner (i.e comment) work also, but this is better explicit.

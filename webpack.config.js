@@ -8,13 +8,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const PATHS = {
-    app: path.join(__dirname, 'src'),
+    src: path.join(__dirname, 'src'),
+    app: path.join(__dirname, 'src', 'app'),
+    style: path.join(__dirname, 'src', 'assets', 'css'),
     build: path.join(__dirname, 'build')
 };
 
 const common = {
     entry: {
-        app: path.join(PATHS.app, 'app', 'app.module.js'),
+        app: path.join(PATHS.app, 'app.module.js'),
+        style: path.join(PATHS.style, 'main.css'),
         vendor: ['angular', 'angular-route', 'toastr', 'lodash']
     },
     output: {

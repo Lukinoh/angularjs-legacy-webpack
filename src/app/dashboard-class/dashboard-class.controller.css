@@ -1,3 +1,7 @@
 .dashboard-class {
-    background-color: green;
+    background-color: limegreen;
+}
+
+:fullscreen .dashboard-class {
+    display: flex
 }

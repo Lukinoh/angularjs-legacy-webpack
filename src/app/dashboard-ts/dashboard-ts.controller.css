@@ -1,3 +1,7 @@
 .dashboard-ts {
     background-color: blue;
 }
+
+:fullscreen .dashboard-ts {
+    display: flex
+}
