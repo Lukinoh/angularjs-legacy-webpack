@@ -1,3 +1,5 @@
+import './dashboard-ts.controller.css';
+
 export default class DashboardTsController {
 
     title: string;

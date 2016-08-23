@@ -4,7 +4,7 @@ const validate = require('webpack-validator');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const PATHS = {
@@ -43,6 +43,10 @@ const common = {
             {
                 test: /\.html$/,
                 loader: 'html-loader',
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style', 'css')
             }
         ]
     },
@@ -94,7 +98,9 @@ const common = {
                 warnings: false
             }
         }),
-        new ForkCheckerPlugin()
+        new ForkCheckerPlugin(),
+        // Output extracted CSS to a file
+        new ExtractTextPlugin('[name].css')
     ]
 };
 

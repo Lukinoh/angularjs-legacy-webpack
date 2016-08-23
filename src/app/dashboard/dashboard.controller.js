@@ -1,3 +1,5 @@
+import './dashboard.controller.css';
+
 export default DashboardController;
 
 function DashboardController(logger) {
