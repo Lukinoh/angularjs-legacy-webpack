@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 const PATHS = {
@@ -17,7 +18,7 @@ const PATHS = {
 const common = {
     entry: {
         app: path.join(PATHS.app, 'app.module.js'),
-        style: path.join(PATHS.style, 'main.css'),
+        style: path.join(PATHS.style, 'main.scss'),
         vendor: ['angular', 'angular-route', 'toastr', 'lodash']
     },
     output: {
@@ -47,11 +48,18 @@ const common = {
                 test: /\.html$/,
                 loader: 'html-loader',
             },
+            //{
+            //    test: /\.scss$/,
+            //    loaders: ['style-loader', 'css-loader', 'sass-loader']
+            // }
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css')
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
             }
         ]
+    },
+    postcss: function () {
+        return [autoprefixer];
     },
     devtool: 'source-map',
     devServer: {
@@ -62,8 +70,8 @@ const common = {
 
         // Unlike the cli flag, this doesn't set
         // HotModuleReplacementPlugin!
-        // hot: true,
-        // inline: true,
+        hot: true,
+        inline: true,
 
         // Display only errors to reduce the amount of output.
         stats: 'errors-only',
@@ -81,9 +89,9 @@ const common = {
     plugins: [
         // Enable multi-pass compilation for enhanced performance
         // in larger projects. Good default.
-        // new webpack.HotModuleReplacementPlugin({
-        //     multiStep: true
-        // }),
+        new webpack.HotModuleReplacementPlugin({
+            multiStep: true // Look at configuration when at work
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']
         }),
