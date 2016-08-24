@@ -48,14 +48,14 @@ const common = {
                 test: /\.html$/,
                 loader: 'html-loader',
             },
-            //{
-            //    test: /\.scss$/,
-            //    loaders: ['style-loader', 'css-loader', 'sass-loader']
-            // }
             {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
+               test: /\.scss$/,
+               loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
             }
+            // { Use this only in production
+            //     test: /\.scss$/,
+            //     loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
+            // }
         ]
     },
     postcss: function () {
@@ -104,14 +104,14 @@ const common = {
             // project and will fail to work.
             root: process.cwd()
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({ // Don't use this in dev mode because it will slow down building
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new ForkCheckerPlugin(),
         // Output extracted CSS to a file
-        new ExtractTextPlugin('[name].css')
+        // new ExtractTextPlugin('[name].css') // Break HMR useit only in prod
     ]
 };
 
