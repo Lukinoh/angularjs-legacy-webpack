@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
@@ -59,7 +59,9 @@ const common = {
         ]
     },
     postcss: function () {
-        return [autoprefixer];
+        return [
+            autoprefixer({ browsers: ['last 2 versions'] })
+        ];
     },
     devtool: 'source-map',
     devServer: {
@@ -87,6 +89,8 @@ const common = {
         // port: 8080 // Defaults to 8080
     },
     plugins: [
+        // new webpack.optimize.OccurrenceOrderPlugin(),
+        // new webpack.NoErrorsPlugin(),
         // Enable multi-pass compilation for enhanced performance
         // in larger projects. Good default.
         new webpack.HotModuleReplacementPlugin({
@@ -112,6 +116,7 @@ const common = {
         new ForkCheckerPlugin(),
         // Output extracted CSS to a file
         // new ExtractTextPlugin('[name].css') // Break HMR useit only in prod
+        new DashboardPlugin(),
     ]
 };
 
