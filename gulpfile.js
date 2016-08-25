@@ -21,9 +21,16 @@ gulp.task('server:dev', shell.task([
     'webpack-dev-server --config ./config/webpack.dev.js --progress --watch --colors'
 ]));
 
+gulp.task('server:prod', shell.task([
+    'webpack-dev-server --config ./config/webpack.prod.js --progress --watch --colors'
+]));
 
 gulp.task('build:dev', shell.task([
-    'webpack --config ./config/webpack.dev.js --progress --watch --colors'
+    'webpack --config ./config/webpack.dev.js --progress --colors'
+]));
+
+gulp.task('build:prod', shell.task([
+    'webpack --config ./config/webpack.prod.js --progress --colors'
 ]));
 
 
@@ -33,13 +40,8 @@ gulp.task('server:dev:dashboard', shell.task([
 ]));
 
 
-gulp.task('server:prod', function() {
-
-});
-
-
 gulp.task('build', function() {
-
+    console.log(process.cwd());
 });
 
 // or...

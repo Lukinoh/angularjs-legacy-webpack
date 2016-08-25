@@ -5,18 +5,20 @@ const autoprefixer = require('autoprefixer');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const PurifyCSSPlugin = require('purifycss-webpack-plugin'); Try to add it in , only with ExtractTextPlugin
 
-const development = {
+const production = {
     entry: {
         app: helpers.root('src', 'app', 'app.module.js'),
         style: helpers.root('src', 'assets', 'css', 'main.scss'),
-        vendor: helpers.root('src', 'app', 'vendor.module.js'),
+        vendor: helpers.root('src', 'app', 'vendor.module.js')
     },
     output: {
         path: helpers.root('build'),
-        filename: '[name].bundle.js',
-        sourceMapFilename: '[name].bundle.map',
+        filename: '[name].[chunkhash].js',
+        sourceMapFilename: '[name].[chunkhash].bundle.map'
     },
     resolve: {
         extensions: ['', '.ts', '.js', '.json'],
@@ -51,7 +53,7 @@ const development = {
             },
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
+                loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
             },
             {
                 test: /\.json$/,
@@ -67,34 +69,35 @@ const development = {
     devtool: 'source-map',
     devServer: {
         // FIXME should look if I can access it from outside
-        port: 9000,
+        port: 9001,
         host: '0.0.0.0',
-        hot: true,
         inline: true,
         historyApiFallback: true,
-        outputPath: helpers.root('dist/') // What is outputPath
     },
     plugins: [
         new ForkCheckerPlugin(),
         new webpack.optimize.OccurenceOrderPlugin(true), // What means true?
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest'] // name or names ?
+           names: ['vendor', 'manifest']
         }),
         new webpack.optimize.DedupePlugin(),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             chunksSortMode: 'dependency'
         }),
-        new webpack.HotModuleReplacementPlugin({
-            multiStep: true // Look at configuration when at work
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
         }),
+        new ExtractTextPlugin('[name].[chunkhash].bundle.css'),
         new CleanWebpackPlugin(['build'], {
             root: helpers.root()
         })
     ]
 };
 
-const config = development;
+const config = production;
 
 module.exports = validate(config, {
     quiet: true
