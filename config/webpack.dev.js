@@ -3,59 +3,20 @@ const helpers = require('./helpers');
 const validate = require('webpack-validator');
 const autoprefixer = require('autoprefixer');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const merge = require('webpack-merge');
+const commonConfig = require('./webpack.common');
 
-const development = {
-    entry: {
-        app: helpers.root('src', 'app', 'app.module.js'),
-        style: helpers.root('src', 'assets', 'css', 'main.scss'),
-        vendor: helpers.root('src', 'app', 'vendor.module.js'),
-    },
+const developmentConfig = {
     output: {
         path: helpers.root('build'),
         filename: '[name].bundle.js',
         sourceMapFilename: '[name].bundle.map',
     },
-    resolve: {
-        extensions: ['', '.ts', '.js', '.json'],
-        root: helpers.root('src'),
-        modulesDirectories: ['node_modules'],
-    },
-    // http://survivejs.com/webpack/loading-assets/loader-definitions/ Loader Evoluation Order is important
     module: {
         loaders: [
             {
-                test: /\.js|.ts$/,
-                loader: 'ng-annotate-loader',
-                exclude: [/\.(spec|e2e)\.(js|ts)$/]
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015'],
-                    compact: false
-                },
-                exclude: [/\.(spec|e2e)\.js$/]
-            },
-            {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                exclude: [/\.(spec|e2e)\.ts$/]
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader',
-            },
-            {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
             }
         ]
     },
@@ -72,29 +33,18 @@ const development = {
         hot: true,
         inline: true,
         historyApiFallback: true,
-        outputPath: helpers.root('dist/') // What is outputPath
     },
     plugins: [
-        new ForkCheckerPlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(true), // What means true?
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest'] // name or names ?
-        }),
-        new webpack.optimize.DedupePlugin(),
-        new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            chunksSortMode: 'dependency'
-        }),
         new webpack.HotModuleReplacementPlugin({
-            multiStep: true // Look at configuration when at work
-        }),
-        new CleanWebpackPlugin(['build'], {
-            root: helpers.root()
+            multiStep: true
         })
     ]
 };
 
-const config = development;
+const config = merge(
+    commonConfig,
+    developmentConfig
+);
 
 module.exports = validate(config, {
     quiet: true
