@@ -1,4 +1,4 @@
-import DashboardClassController from "./dashboard-class.controller.js";
+import DashboardClassController from "./dashboard-class.controller";
 import setRoute from "./dashboard-class.route";
 
 export default angular
