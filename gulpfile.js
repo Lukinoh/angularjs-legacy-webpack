@@ -21,6 +21,10 @@ gulp.task('server:dev', shell.task([
     'webpack-dev-server --config ./config/webpack.dev.js --progress --watch --colors'
 ]));
 
+gulp.task('server:devcss', shell.task([
+    'webpack-dev-server --config ./config/webpack.devcss.js --progress --watch --colors'
+]));
+
 gulp.task('server:prod', shell.task([
     'webpack-dev-server --config ./config/webpack.prod.js --progress --watch --colors'
 ]));

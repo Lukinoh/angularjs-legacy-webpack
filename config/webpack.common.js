@@ -10,7 +10,7 @@ const commonConfig = {
     entry: {
         app: helpers.root('src', 'app', 'app.module.js'),
         style: helpers.root('src', 'assets', 'css', 'main.scss'),
-        vendor: helpers.root('src', 'app', 'vendor.module.js'),
+        vendor: helpers.root('src', 'app', 'vendor.module.js')
     },
     resolve: {
         extensions: ['', '.ts', '.js', '.json'],
@@ -63,7 +63,6 @@ const commonConfig = {
             root: helpers.root()
         })
     ]
-
 };
 
 module.exports = validate(commonConfig, {
