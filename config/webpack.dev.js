@@ -16,7 +16,7 @@ const developmentConfig = {
         loaders: [
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
+                loaders: ['style-loader', 'css?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
             },
             {
                 test: /\.(jpg|png)$/,

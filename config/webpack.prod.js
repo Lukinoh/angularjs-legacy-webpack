@@ -12,14 +12,14 @@ const commonConfig = require('./webpack.common');
 const productionConfig = {
     output: {
         path: helpers.root('build'),
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[chunkhash].bundle.js',
         sourceMapFilename: '[name].[chunkhash].bundle.map'
     },
     module: {
         loaders: [
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
+                loader: ExtractTextPlugin.extract("style-loader?sourceMap", ['css-loader?sourceMap!postcss-loader', 'sass-loader?sourceMap'])
             },
             {
                 test: /\.(jpg|png)$/,
