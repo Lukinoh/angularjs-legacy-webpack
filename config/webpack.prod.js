@@ -20,6 +20,15 @@ const productionConfig = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("style-loader", ['css-loader!postcss-loader', 'sass-loader'])
+            },
+            {
+                test: /\.(jpg|png)$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 7000,
+                    name: 'assets/images/[name].[hash].[ext]'
+                },
+                include: helpers.root('src', 'assets', 'images')
             }
         ]
     },

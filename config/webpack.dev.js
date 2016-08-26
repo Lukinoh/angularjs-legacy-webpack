@@ -17,6 +17,15 @@ const developmentConfig = {
             {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
+            },
+            {
+                test: /\.(jpg|png)$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 7000,
+                    name: 'assets/images/[name].[ext]'
+                },
+                include: helpers.root('src', 'assets', 'images')
             }
         ]
     },
@@ -27,7 +36,6 @@ const developmentConfig = {
     },
     devtool: 'source-map',
     devServer: {
-        // FIXME should look if I can access it from outside
         port: 9000,
         host: '0.0.0.0',
         hot: true,
