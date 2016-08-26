@@ -4,7 +4,8 @@ import appDashboard from "./dashboard/dashboard.module";
 import appDashboardClass from "./dashboard-class/dashboard-class.module";
 import appDashboardTs from "./dashboard-ts/dashboard-ts.module";
 import appDashboardNgIncluded from "./dashboard-ng-included/dashboard-ng-included.module";
-import appImageSelector from "./image-selector/image-selector.module";
+import appImageSelectorEs6 from "./image-selector-es6/image-selector-es6.module";
+import appImageSelectorRequire from "./image-selector-require/image-selector-require.module";
 
 export default angular
     .module('app', [
@@ -14,6 +15,7 @@ export default angular
         appDashboardClass,
         appDashboardTs,
         appDashboardNgIncluded,
-        appImageSelector
+        appImageSelectorEs6,
+        appImageSelectorRequire
     ])
     .name;

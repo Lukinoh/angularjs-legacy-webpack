@@ -3,7 +3,7 @@ import V from "../../assets/images/V.png";
 import E from "../../assets/images/E.png";
 import N from "../../assets/images/N.png";
 
-export default class ImageSelectorController {
+export default class ImageSelectorEs6Controller {
     constructor(logger) {
         'ngInject'; // The old manner (i.e comment) work also, but this is better explicit.
         this.logger = logger;
@@ -14,27 +14,18 @@ export default class ImageSelectorController {
             E: E,
             N: N
         };
-
-
         this.activate();
     }
 
     activate() {
-        this.logger.info('Image Selector Controller Activated !', {}, 'Status');
+        this.logger.info('Image Selector Es6 Controller Activated !', {}, 'Status');
     }
 
-    // Solution 1
-    // loadImage(letter) {
-    //    return require('../../assets/images/' + letter + '.png');
-    // };
-
     // Solution 2
-    // Somewhat less dynamic because you have to import specifically all the images you need
-    // but more in sync with the ideology to use only import/export
+    // Somewhat less dynamic than require because you have to import specifically all the images you need.
+    // But the solution uses import/export es6 syntax.
     loadImage(letter) {
         return this.letterToImage[letter];
     }
-
-    // No more private function, only public
 }
 

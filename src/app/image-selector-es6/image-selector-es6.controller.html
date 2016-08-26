@@ -1,0 +1,13 @@
+<div class="image-selector-es6">
+    <p>
+        <select class="image-selector-es6-select" ng-model="vm.letter">
+            <option value="S">S</option>
+            <option value="V">V</option>
+            <option value="E">E</option>
+            <option value="N">N</option>
+        </select>
+    </p>
+    <p>
+        <img src="{{vm.loadImage(vm.letter)}}"/>
+    </p>
+</div>
