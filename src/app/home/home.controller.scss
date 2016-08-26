@@ -1,0 +1,17 @@
+.home {
+    background-color: azure;
+
+    .links {
+        flex-direction: column;
+        display: flex;
+
+    }
+
+    .link + .link {
+        margin-top: 1rem;
+    }
+
+    .input-text-browser-sync {
+        width: 20rem;
+    }
+}

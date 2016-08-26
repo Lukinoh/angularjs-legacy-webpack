@@ -39,7 +39,7 @@ const productionConfig = {
     },
     devtool: 'source-map',
     devServer: {
-        port: 9001,
+        port: 9000,
         host: '0.0.0.0',
         inline: true,
         historyApiFallback: true,
