@@ -16,7 +16,10 @@ const developmentConfig = {
         loaders: [
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
+                loaders: ['style-loader', 'css', 'postcss-loader', 'sass-loader']
+                // Until this issue is not fixed, we cannot use sourceMap on Firefox and Chrome
+                // https://github.com/jtangelder/sass-loader/issues/194
+                // loaders: ['style-loader', 'css?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
             },
             {
                 test: /\.(jpg|png)$/,
