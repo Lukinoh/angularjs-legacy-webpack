@@ -2,9 +2,8 @@ import imageSelectorRequire from "./image-selector-require.controller.html";
 
 export default setRoute;
 
-/* @ngInject */
 function setRoute($routeProvider) {
-
+    'ngInject';
     $routeProvider
         .when('/image-selector-require', {
             template: imageSelectorRequire,

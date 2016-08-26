@@ -1,7 +1,7 @@
 export default setRoute;
 
-/* @ngInject */
 function setRoute($routeProvider) {
+    'ngInject';
     $routeProvider.otherwise({
         redirectTo: '/dashboard'
     });

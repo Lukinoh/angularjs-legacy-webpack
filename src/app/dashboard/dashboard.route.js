@@ -2,9 +2,8 @@ import dashboardHtml from "./dashboard.controller.html";
 
 export default setRoute;
 
-/* @ngInject */
 function setRoute($routeProvider) {
-
+    'ngInject';
     $routeProvider
         .when('/dashboard', {
             template: dashboardHtml,

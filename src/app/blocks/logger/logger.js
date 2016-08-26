@@ -1,7 +1,8 @@
 export default logger;
 
-/* @ngInject */
 function logger($log, toastr) {
+    'ngInject';
+
     var service = {
         showToasts: true,
 
@@ -15,6 +16,7 @@ function logger($log, toastr) {
     };
 
     return service;
+
     /////////////////////
 
     function error(message, data, title) {

@@ -2,9 +2,8 @@ const dashboardTsHtml = require('./dashboard-ts.controller.html');
 
 export default setRoute;
 
-/* @ngInject */
 function setRoute($routeProvider) {
-
+    'ngInject';
     $routeProvider
         .when('/dashboard-ts', {
             template: dashboardTsHtml,

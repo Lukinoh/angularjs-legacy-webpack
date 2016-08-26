@@ -7,7 +7,7 @@ export default angular
     .config(setRoute)
     .controller('DashboardNgIncludedController', DashboardNgIncludedController)
     .run(function ($templateCache) {
-        "ngInject";
+        'ngInject';
 
         // Put in cache the files that are ng-include'd in templates
         $templateCache.put('dashboard-ng-included/dashboard-content.template.html', dashboardContent);

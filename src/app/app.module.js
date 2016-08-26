@@ -6,6 +6,7 @@ import appDashboardTs from "./dashboard-ts/dashboard-ts.module";
 import appDashboardNgIncluded from "./dashboard-ng-included/dashboard-ng-included.module";
 import appImageSelectorEs6 from "./image-selector-es6/image-selector-es6.module";
 import appImageSelectorRequire from "./image-selector-require/image-selector-require.module";
+import appGoogleClosure from "./google-closure/google-closure.module";
 
 export default angular
     .module('app', [
@@ -16,6 +17,8 @@ export default angular
         appDashboardTs,
         appDashboardNgIncluded,
         appImageSelectorEs6,
-        appImageSelectorRequire
+        appImageSelectorRequire,
+        appImageSelectorRequire,
+        appGoogleClosure
     ])
     .name;

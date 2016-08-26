@@ -2,8 +2,9 @@ import ratingHtml from "./rating.directive.html";
 
 export default RatingDirective;
 
-/* @ngInject */
 function RatingDirective() {
+    'ngInject';
+
     return {
         restrict: 'E',
         scope: {
