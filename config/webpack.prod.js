@@ -28,7 +28,11 @@ const productionConfig = {
                     limit: 7000,
                     name: 'assets/images/[name].[hash].[ext]'
                 },
-                include: helpers.root('src', 'assets', 'images')
+                // include: helpers.root('src', 'assets', 'images')
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=assets/fonts/[name].[hash].[ext]'
             }
         ]
     },

@@ -1,3 +1,5 @@
+@import '../fonts/fonts';
+
 @import '../../app/dashboard/dashboard.controller';
 @import '../../app/dashboard-class/dashboard-class.controller';
 @import '../../app/dashboard-ts/dashboard-ts.controller';
@@ -6,5 +8,5 @@
 @import '../../app/image-selector-es6/image-selector-es6.controller';
 @import '../../app/image-selector-require/image-selector-require.controller';
 @import '../../app/google-closure/google-closure.controller';
-
+@import '../../app/font-zarbi/font-zarbi.controller';
 @import '../../app/home/home.controller';

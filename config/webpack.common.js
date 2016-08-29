@@ -72,7 +72,8 @@ const commonConfig = {
                 // proxy the Webpack Dev Server endpoint
                 // (which should be serving on http://localhost:3100/)
                 // through BrowserSync
-                proxy: 'http://0.0.0.0:9000/'
+                proxy: 'http://0.0.0.0:9000/',
+                open: false
             },
             // plugin options
             {
