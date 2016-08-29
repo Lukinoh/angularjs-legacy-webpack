@@ -1,0 +1,9 @@
+// You can override variables, however you cannot use variables of bootstrap
+// to override bootstrap variables, otherwise it will not work,
+
+// It is possible to do this trick work (our project actually work like that), however it is not wise to do that,
+// It's in my point of view a hack
+
+$btn-primary-color:red; // OK !
+
+// $btn-primary-color: $btn-secondary-color; // NOT OK !

@@ -1,0 +1,6 @@
+@import 'bs_variables';
+@import 'bs_mixins';
+
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/'; // Very important: https://github.com/jtangelder/sass-loader/issues/133
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+

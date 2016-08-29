@@ -10,6 +10,7 @@ import appGoogleClosure from "./google-closure/google-closure.module";
 import appHome from "./home/home.module";
 import appFontZarbi from "./font-zarbi/font-zarbi.module";
 import appMiscellaneous from "./miscellaneous/miscellaneous.module";
+import appBootstrapSass from "./bootstrap-sass/bootstrap-sass.module";
 
 export default angular
     .module('app', [
@@ -25,6 +26,7 @@ export default angular
         appGoogleClosure,
         appHome,
         appFontZarbi,
-        appMiscellaneous
+        appMiscellaneous,
+        appBootstrapSass
     ])
     .name;
