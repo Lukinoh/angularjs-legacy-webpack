@@ -10,8 +10,9 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const commonConfig = {
     entry: {
         app: helpers.root('src', 'app', 'app.module.js'),
-        style: helpers.root('src', 'assets', 'css', 'main.scss'),
-        vendor: helpers.root('src', 'app', 'vendor.module.js')
+        appStyle: helpers.root('src', 'assets', 'css', 'main.scss'),
+        vendor: helpers.root('src', 'app', 'vendor.module.js'),
+        vendorStyle: helpers.root('src', 'assets', 'css', 'vendor.scss')
     },
     resolve: {
         extensions: ['', '.ts', '.js', '.json'],
