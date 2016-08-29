@@ -33,6 +33,11 @@ const productionConfig = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=assets/fonts/[name].[hash].[ext]'
+            },
+            {
+                test: /\.*$/,
+                loader: 'file-loader?name=assets/miscellaneous/[name].[hash].[ext]',
+                include: helpers.root('src', 'assets', 'miscellaneous')
             }
         ]
     },

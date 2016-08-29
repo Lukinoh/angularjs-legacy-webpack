@@ -2,19 +2,16 @@ const gulp = require('gulp');
 const shell = require('gulp-shell');
 const helper = require('./config/helpers');
 
-// var browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync').create();
 //
 // Static server
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: "./src",
-//             routes: {
-//                 "/node_modules": "node_modules"
-//             }
-//         }
-//     });
-// });
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./build",
+        }
+    });
+});
 
 
 gulp.task('server:dev', shell.task([
@@ -34,7 +31,7 @@ gulp.task('build:dev', shell.task([
 ]));
 
 gulp.task('build:prod', shell.task([
-    'webpack --config ./config/webpack.prod.js --progress --colors'
+    'webpack --config ./config/webpack.prod.js --progress --colors --display-modules'
 ]));
 
 

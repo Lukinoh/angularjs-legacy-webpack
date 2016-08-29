@@ -1,0 +1,1 @@
+My static asset with spaces in order to break everything.

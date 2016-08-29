@@ -9,6 +9,7 @@ import appImageSelectorRequire from "./image-selector-require/image-selector-req
 import appGoogleClosure from "./google-closure/google-closure.module";
 import appHome from "./home/home.module";
 import appFontZarbi from "./font-zarbi/font-zarbi.module";
+import appMiscellaneous from "./miscellaneous/miscellaneous.module";
 
 export default angular
     .module('app', [
@@ -23,6 +24,7 @@ export default angular
         appImageSelectorRequire,
         appGoogleClosure,
         appHome,
-        appFontZarbi
+        appFontZarbi,
+        appMiscellaneous
     ])
     .name;
