@@ -1,7 +1,7 @@
-import S from "../../assets/images/S.png";
-import V from "../../assets/images/V.png";
-import E from "../../assets/images/E.png";
-import N from "../../assets/images/N.png";
+import S from "assets/images/S.png";
+import V from "assets/images/V.png";
+import E from "assets/images/E.png";
+import N from "assets/images/N.png";
 
 export default class ImageSelectorEs6Controller {
     constructor(logger) {
