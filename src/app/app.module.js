@@ -11,6 +11,7 @@ import appHome from "app/components/home/home.module";
 import appFontZarbi from "app/components/font-zarbi/font-zarbi.module";
 import appMiscellaneous from "app/components/miscellaneous/miscellaneous.module";
 import appBootstrapSass from "app/components/bootstrap-sass/bootstrap-sass.module";
+import appMusic from "app/components/music/music.module";
 
 export default angular
     .module('app', [
@@ -27,6 +28,7 @@ export default angular
         appHome,
         appFontZarbi,
         appMiscellaneous,
-        appBootstrapSass
+        appBootstrapSass,
+        appMusic
     ])
     .name;
