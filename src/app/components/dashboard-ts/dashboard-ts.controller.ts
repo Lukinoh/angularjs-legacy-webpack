@@ -1,6 +1,6 @@
 export default class DashboardTsController {
 
-    title: string;
+    title: MY.AWESOME_STRING;
     logger: any;
 
     constructor(logger) {
