@@ -1,0 +1,36 @@
+{
+    env: {
+        # hello this is my comment
+        browser: true,
+        commonjs: true,
+        es6: true # hello this is my comment
+    },
+    extends: "eslint:recommended",
+    globals: {
+      angular: true
+    },
+    parserOptions: {
+      sourceType: "module"
+    },
+    plugins: [
+      "angular"
+    ],
+    rules: {
+        indent: [
+            "error",
+            4
+        ],
+        linebreak-style: [
+            "error",
+            "unix"
+        ],
+        quotes: [
+            "error",
+            "single"
+        ],
+        semi: [
+            "error",
+            "always"
+        ]
+    }
+}

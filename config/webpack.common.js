@@ -20,6 +20,16 @@ const commonConfig = {
         modulesDirectories: ['node_modules'],
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.js$/,
+                loader: 'eslint-loader'
+            },
+            {
+                test: /\.ts$/,
+                loader: 'tslint-loader'
+            }
+        ],
         loaders: [
             {
                 test: /\.js|.ts$/,
@@ -49,6 +59,13 @@ const commonConfig = {
                 loader: 'json-loader'
             }
         ]
+    },
+    eslint: {
+        configFile: './config/lints/.eslintrc.yml',
+        ignorePath: './config/lints/.eslintignore',
+    },
+    tslint: {
+        configuration: helpers.yamlToJson('./config/lints/tslint.yml'),
     },
     plugins: [
         new ForkCheckerPlugin(),
