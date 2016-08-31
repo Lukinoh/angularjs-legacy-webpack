@@ -1,4 +1,4 @@
-import musicHtml from "./music.controller.html";
+import musicHtml from './music.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'MusicController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

@@ -1,5 +1,5 @@
-import HomeController from "./home.controller";
-import setRoute from "./home.route";
+import HomeController from './home.controller';
+import setRoute from './home.route';
 
 export default angular
     .module('app.home', [])

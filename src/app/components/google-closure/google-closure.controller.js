@@ -8,7 +8,6 @@ export default class GoogleClosureController {
     }
 
     activate() {
-        console.log();
         this.logger.info('Google Closure Controller Activated !', {}, 'Status');
     }
 

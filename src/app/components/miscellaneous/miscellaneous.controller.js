@@ -1,5 +1,5 @@
-import myStaticAsset from "assets/miscellaneous/my_static_asset.txt";
-import myOpenOfficeFile from  "assets/miscellaneous/MyOpenOfficeFile.ods";
+import myStaticAsset from 'assets/miscellaneous/my_static_asset.txt';
+import myOpenOfficeFile from 'assets/miscellaneous/MyOpenOfficeFile.ods';
 
 export default class MiscellaneousController {
     constructor(logger) {

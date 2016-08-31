@@ -1,5 +1,5 @@
-import MusicController from "./music.controller";
-import setRoute from "./music.route";
+import MusicController from './music.controller';
+import setRoute from './music.route';
 
 export default angular
     .module('app.music', [])

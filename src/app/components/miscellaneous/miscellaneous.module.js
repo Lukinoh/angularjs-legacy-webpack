@@ -1,5 +1,5 @@
-import MiscellaneousController from "./miscellaneous.controller";
-import setRoute from "./miscellaneous.route";
+import MiscellaneousController from './miscellaneous.controller';
+import setRoute from './miscellaneous.route';
 
 export default angular
     .module('app.miscellaneous', [])

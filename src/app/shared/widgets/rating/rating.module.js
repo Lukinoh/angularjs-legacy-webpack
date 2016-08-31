@@ -1,4 +1,4 @@
-import RatingDirective from "./rating.directive";
+import RatingDirective from './rating.directive';
 
 export default angular
     .module('app.widgets.rating', [])

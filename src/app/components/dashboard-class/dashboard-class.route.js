@@ -1,4 +1,4 @@
-import dashboardClassHtml from "./dashboard-class.controller.html";
+import dashboardClassHtml from './dashboard-class.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'DashboardClassController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

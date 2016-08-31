@@ -15,6 +15,6 @@ export default class ImageSelectorRequireController {
     // With this solution you do not have to import all images before runtime.
     loadImage(letter) {
         return require('assets/images/' + letter + '.png');
-    };
+    }
 }
 

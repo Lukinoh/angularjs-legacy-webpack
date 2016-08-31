@@ -1,4 +1,4 @@
-import homeHtml from "./home.controller.html";
+import homeHtml from './home.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'HomeController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

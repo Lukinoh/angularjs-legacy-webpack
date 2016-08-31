@@ -1,4 +1,4 @@
-import fontZarbi from "./font-zarbi.controller.html";
+import fontZarbi from './font-zarbi.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'FontZarbiController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

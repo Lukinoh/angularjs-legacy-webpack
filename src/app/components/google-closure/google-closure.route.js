@@ -1,4 +1,4 @@
-import googleClosure from "./google-closure.controller.html";
+import googleClosure from './google-closure.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'GoogleClosureController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

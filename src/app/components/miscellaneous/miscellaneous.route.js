@@ -1,4 +1,4 @@
-import miscellaneousHtml from "./miscellaneous.controller.html";
+import miscellaneousHtml from './miscellaneous.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'MiscellaneousController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

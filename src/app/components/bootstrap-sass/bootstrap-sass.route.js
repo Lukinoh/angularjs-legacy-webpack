@@ -1,4 +1,4 @@
-import bootstrapSassHtml from "./bootstrap-sass.controller.html";
+import bootstrapSassHtml from './bootstrap-sass.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'BootstrapSassController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

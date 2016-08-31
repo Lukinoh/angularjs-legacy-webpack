@@ -1,5 +1,5 @@
-import DashboardTsController from "./dashboard-ts.controller";
-import setRoute from "./dashboard-ts.route";
+import DashboardTsController from './dashboard-ts.controller';
+import setRoute from './dashboard-ts.route';
 
 export default angular
     .module('app.dashboardTs', [])

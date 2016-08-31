@@ -1,4 +1,4 @@
-import ratingHtml from "./rating.directive.html";
+import ratingHtml from './rating.directive.html';
 
 export default RatingDirective;
 

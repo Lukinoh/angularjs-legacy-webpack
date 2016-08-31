@@ -1,6 +1,6 @@
-import DashboardNgIncludedController from "./dashboard-ng-included.controller";
-import setRoute from "./dashboard-ng-included.route";
-import dashboardContent from "./dashboard-content.template.html";
+import DashboardNgIncludedController from './dashboard-ng-included.controller';
+import setRoute from './dashboard-ng-included.route';
+import dashboardContent from './dashboard-content.template.html';
 
 export default angular
     .module('app.dashboardNgIncluded', [])

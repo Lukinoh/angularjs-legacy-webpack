@@ -7,7 +7,6 @@ export default class GoogleClosureController {
     }
 
     activate() {
-        console.log();
         this.logger.info('Font Zarbi Controller Activated !', {}, 'Status');
     }
 }

@@ -1,5 +1,5 @@
-import BootstrapSassController from "./bootstrap-sass.controller";
-import setRoute from "./bootstrap-sass.route";
+import BootstrapSassController from './bootstrap-sass.controller';
+import setRoute from './bootstrap-sass.route';
 
 export default angular
     .module('app.bootstrapSass', [])

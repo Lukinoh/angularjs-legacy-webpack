@@ -1,4 +1,4 @@
-import imageSelectorRequire from "./image-selector-require.controller.html";
+import imageSelectorRequire from './image-selector-require.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'ImageSelectorRequireController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

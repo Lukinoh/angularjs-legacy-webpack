@@ -1,5 +1,5 @@
-import FontZarbiController from "./font-zarbi.controller";
-import setRoute from "./font-zarbi.route";
+import FontZarbiController from './font-zarbi.controller';
+import setRoute from './font-zarbi.route';
 
 export default angular
     .module('app.fontZarbi', [])

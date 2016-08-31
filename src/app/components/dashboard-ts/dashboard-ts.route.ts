@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'DashboardTsController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

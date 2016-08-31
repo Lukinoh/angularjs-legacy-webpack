@@ -1,4 +1,4 @@
-import dashboardNgIncludedHtml from "./dashboard-ng-included.controller.html";
+import dashboardNgIncludedHtml from './dashboard-ng-included.controller.html';
 
 export default setRoute;
 
@@ -10,5 +10,5 @@ function setRoute($routeProvider) {
             controller: 'DashboardNgIncludedController',
             controllerAs: 'vm',
             reloadOnSearch: false
-        })
+        });
 }

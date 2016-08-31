@@ -7,7 +7,6 @@ export default class BootstrapSassController {
     }
 
     activate() {
-        console.log();
         this.logger.info('Bootstrap Sass Controller Activated !', {}, 'Status');
     }
 }
