@@ -1,9 +1,10 @@
 import DashboardTsController from './dashboard-ts.controller';
+import appDashboardTs from 'app/components/dashboard-ts/dashboard-ts.module';
 
 describe('DashboardClassController', () => {
   let DashboardClassController: DashboardTsController;
 
-  beforeEach(angular.mock.module('app.dashboardClass'));
+  beforeEach(angular.mock.module(appDashboardTs);
 
   beforEach(inject((_DashboardClassController_) => {
     DashboardClassController = _DashboardClassController_;
