@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const SassLintPlugin = require('sasslint-webpack-plugin');
 
 const commonConfig = {
     entry: {
@@ -61,13 +62,22 @@ const commonConfig = {
         ]
     },
     eslint: {
-        configFile: './config/lints/.eslintrc.yml',
-        ignorePath: './config/lints/.eslintignore',
+        configFile: helpers.root('config', 'lints', '.eslintrc.yml'),
+        ignorePath: helpers.root('config', 'lints', '.eslintignore')
     },
     tslint: {
-        configuration: helpers.yamlToJson('./config/lints/tslint.yml'),
+        configuration: helpers.yamlToJson(helpers.root('config', 'lints', 'tslint.yml'))
     },
     plugins: [
+        new SassLintPlugin({
+            configFile: helpers.root('config', 'lints', 'sass-lint.yml'),
+            ignorePlugins: [
+                'extract-text-webpack-plugin',
+                'html-webpack-plugin for "index.html"'
+            ],
+            glob: 'src/**/*.scss',
+            quiet: false
+        }),
         new ForkCheckerPlugin(),
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.optimize.CommonsChunkPlugin({

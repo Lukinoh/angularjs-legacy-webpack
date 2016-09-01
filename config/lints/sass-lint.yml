@@ -1,0 +1,24 @@
+{
+	options: {
+		merge-default-rules: false,
+		formatter: "html",
+		# Output-file works only from CLI:
+		# ./node_modules/sass-lint/bin/sass-lint.js -c ./sass-lint.yml 'src/**/*.scss' -v
+		output-file: "reports/sass-lint.html"
+	},
+	# 2 means warning, 1 means error
+	rules: {
+		property-sort-order: [
+			1,
+			{
+				order: "alphabetical"
+			}
+		],
+		indentation: [
+			2,
+			{
+				size: 4
+			}
+		]
+	}
+}

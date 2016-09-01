@@ -41,9 +41,23 @@ gulp.task('server:dev:dashboard', shell.task([
 ]));
 
 
-gulp.task('build', function() {
-    console.log(process.cwd());
+
+gulp.task('sass-lint-report', function(done) {
+    console.log('TODO');
+    done()
 });
+
+gulp.task('es-lint-report', function(done) {
+    console.log('TODO');
+    done()
+});
+
+
+gulp.task('ts-lint-report', function(done) {
+    console.log('TODO');
+    done()
+});
+
 
 // or...
 //
