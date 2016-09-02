@@ -1,73 +1,25 @@
-const webpack = require('webpack');
-const helpers = require('./helpers');
-const validate = require('webpack-validator');
-const autoprefixer = require('autoprefixer');
+var validate = require('webpack-validator');
+var merge = require('webpack-merge');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const PurifyCSSPlugin = require('purifycss-webpack-plugin'); Try to add it in , only with ExtractTextPlugin
+var commonConfig = require('./webpack.common');
 
-const merge = require('webpack-merge');
-const commonConfig = require('./webpack.common');
+var wpBase = require('./webpack-parts/webpack-base');
+var wpLoaders = require('./webpack-parts/webpack-loaders');
+var wpPlugins = require('./webpack-parts/webpack-plugins');
 
-const productionConfig = {
-    output: {
-        path: helpers.root('build'),
-        filename: '[name].[chunkhash].bundle.js',
-        sourceMapFilename: '[name].[chunkhash].bundle.map'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style-loader?sourceMap", ['css-loader?sourceMap!postcss-loader', 'sass-loader?sourceMap'])
-            },
-            {
-                test: /\.(jpg|png)$/,
-                loader: 'url-loader',
-                query: {
-                    limit: 7000,
-                    name: 'assets/images/[name].[hash].[ext]'
-                },
-                // include: helpers.root('src', 'assets', 'images')
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file-loader?name=assets/fonts/[name].[hash].[ext]'
-            },
-            {
-                test: /\.*$/,
-                loader: 'file-loader?name=assets/miscellaneous/[name].[hash].[ext]',
-                include: helpers.root('src', 'assets', 'miscellaneous')
-            }
-        ]
-    },
-    postcss: function () {
-        return [
-            autoprefixer({ browsers: ['last 2 versions'] })
-        ];
-    },
-    devtool: 'source-map',
-    devServer: {
-        port: 9000,
-        host: '0.0.0.0',
-        inline: true,
-        historyApiFallback: true,
-    },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
-        new ExtractTextPlugin('[name].[chunkhash].bundle.css')
-    ]
-};
-
-const config = merge(
+var productionConfig = merge(
     commonConfig,
-    productionConfig
+    wpBase.getOutput('prod'),
+    wpBase.getDevTool('source-map'),
+    wpBase.getDevServer('prod'),
+    wpLoaders.getScss('prod'),
+    wpLoaders.getImages('prod'),
+    wpLoaders.getFonts('prod'),
+    wpLoaders.getMiscellaneous('prod'),
+    wpPlugins.getDedupe(),
+    wpPlugins.getUglifyJs()
 );
 
-module.exports = validate(config, {
+module.exports = validate(productionConfig, {
     quiet: true
 });

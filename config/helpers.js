@@ -16,10 +16,16 @@ function root(args) {
     return path.join.apply(path, [ROOT].concat(args));
 }
 
+function pathConcat(args) {
+    args = Array.prototype.slice.call(arguments, 0);
+    return path.join.apply(path, args);
+}
+
 function yamlToJson(filePath) {
     return yaml.safeLoad(stripBom(fs.readFileSync(filePath, "utf8")));
 }
 
 exports.isWebpackDevServer = isWebpackDevServer;
 exports.root = root;
+exports.pathConcat = pathConcat;
 exports.yamlToJson = yamlToJson;
