@@ -9,7 +9,7 @@ exports.getNgAnnotate = function () {
                 {
                     test: /\.js|.ts$/,
                     loader: 'ng-annotate-loader',
-                    exclude: [/\.(spec|e2e)\.(js|ts)$/]
+                    //exclude: [/\.(spec|e2e)\.(js|ts)$/]
                 }
             ]
         }
@@ -27,7 +27,7 @@ exports.getBabel = function () {
                         presets: ['es2015'],
                         compact: false
                     },
-                    exclude: [/\.(spec|e2e)\.js$/]
+                    //exclude: [/\.(spec|e2e)\.js$/]
                 }
             ]
         }
@@ -42,7 +42,7 @@ exports.getAwesomeTypescript = function () {
                 {
                     test: /\.ts$/,
                     loader: 'awesome-typescript-loader',
-                    exclude: [/\.(spec|e2e)\.ts$/]
+                    //exclude: [/\.(spec|e2e)\.ts$/]
                 }
             ]
         }
@@ -191,4 +191,21 @@ exports.getMiscellaneous = function (mode) {
             ]
         }
     };
+};
+
+exports.getIstanbulInstrumenter = function () {
+    return {
+        module: {
+            loaders: [
+                {
+                    test: /\.*$/,
+                    loader: 'file-loader',
+                    query: {
+                        name: helpers.pathConcat('assets', 'miscellaneous', name + '.[ext]')
+                    },
+                    include: helpers.root('src', 'assets', 'miscellaneous')
+                }
+            ]
+        }
+    }
 };

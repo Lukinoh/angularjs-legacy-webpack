@@ -102,7 +102,7 @@ exports.getSassLint = function() {
                     'extract-text-webpack-plugin',
                     'html-webpack-plugin for "index.html"'
                 ],
-                glob: helpers.root('src', '**', '*.scss'),
+                glob: helpers.pathConcat('src', '**', '*.scss'),
                 quiet: false
             })
         ]
