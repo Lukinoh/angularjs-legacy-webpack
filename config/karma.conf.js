@@ -1,12 +1,11 @@
 // Karma configuration
 // Generated on Mon Sep 05 2016 10:44:40 GMT+0200 (CEST)
-var helpers = require('./config/helpers');
 
 module.exports = function karmaConfig (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: '../',
 
 
         // frameworks to use
@@ -15,26 +14,27 @@ module.exports = function karmaConfig (config) {
 
 
         // list of files / patterns to load in the browser
-        files: [
-            'src/**/*.spec.js'
-        ],
         //files: [
-        //    './tests.webpack.js'
+        //    'src/**/*.spec.js'
         //],
+        files: [
+            'src/app/vendor.module.js',
+            'src/app/app.module.js',
+            'config/karma/specs.webpack.js'
+        ],
 
 
         // list of files to exclude
-        exclude: [],
+        exclude: [''],
 
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/**/*.js': ['coverage', 'webpack', 'sourcemap'],
+            'src/app/vendor.module.js': ['webpack', 'sourcemap'],
+            'src/app/app.module.js': ['webpack', 'sourcemap'],
+            'config/karma/specs.webpack.js': ['webpack', 'sourcemap']
         },
-        //preprocessors: {
-        //    './tests.webpack.js': ['coverage', 'webpack', 'sourcemap']
-        //},
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
@@ -47,7 +47,7 @@ module.exports = function karmaConfig (config) {
 
 
         // enable / disable colors in the output (reporters and logs)
-        colors: true,
+        colors: true,  //Seems not working through gulp.shell you have to specifify the command inline
 
 
         // level of logging
@@ -61,6 +61,8 @@ module.exports = function karmaConfig (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        // Should add some flexibility
+        //browsers: ['Chrome'],
         browsers: ['PhantomJS'],
 
 
@@ -73,15 +75,19 @@ module.exports = function karmaConfig (config) {
         concurrency: Infinity,
 
         coverageReporter: {
-            dir : '/reports/coverage/',
+            dir : './reports/coverage/',
             reporters: [
                 { type: 'text-summary' },
                 { type: 'json' },
-                { type: 'html' }
-            ]
+                { type: 'html' },
+            ],
+            //instrumenters: { isparta : require('isparta') },
+            //instrumenter: {
+            //    '**/*.js': 'isparta'
+            //}
         },
 
-        webpack: require('./config/webpack.test.js'),
+        webpack: require('./webpack.test.js'),
 
         webpackMiddleware: {
             noInfo: true

@@ -1,4 +1,4 @@
-const helpers =  require('../helpers');
+const helpers = require('../helpers');
 
 exports.getEslint = function () {
     return {
@@ -6,7 +6,8 @@ exports.getEslint = function () {
             preLoaders: [
                 {
                     test: /\.js$/,
-                    loader: 'eslint-loader'
+                    loader: 'eslint-loader',
+                    include: [helpers.root('src')]
                 }
             ]
 
@@ -25,7 +26,8 @@ exports.getTslint = function () {
             preLoaders: [
                 {
                     test: /\.ts$/,
-                    loader: 'tslint-loader'
+                    loader: 'tslint-loader',
+                    include: [helpers.root('src')]
                 }
             ]
 

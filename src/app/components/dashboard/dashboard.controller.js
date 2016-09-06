@@ -5,10 +5,16 @@ function DashboardController(logger) {
 
     var vm = this;
     vm.title = 'Dashboard';
+    vm.getText = getText;
 
     activate();
 
     function activate() {
         logger.info('Dashboard Controller Activated !', {}, 'Status');
     }
+
+    function getText() {
+        return 'My Awesome String';
+    }
+
 }

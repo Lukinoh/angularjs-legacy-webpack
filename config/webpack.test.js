@@ -8,14 +8,19 @@ var wpPostLoaders = require('./webpack-parts/webpack-postloaders');
 var wpPlugins = require('./webpack-parts/webpack-plugins');
 
 var productionConfig = merge(
-    wpBase.getEntry(),
+    {
+        entry: {}
+    },
+    {
+        output: {}
+    },
     wpBase.getResolve(),
-    wpBase.getOutput('dev'),
     wpBase.getDevTool('source-map'),
-    wpLoaders.getBabel(),
-    wpLoaders.getAwesomeTypescript(),
     wpPreLoaders.getEslint(),
     wpPreLoaders.getTslint(),
+    wpLoaders.getAwesomeTypescript(),
+    wpLoaders.getBabel(),
+    wpLoaders.getNgAnnotate(),
     wpLoaders.getScss('dev'),
     wpLoaders.getImages('dev'),
     wpLoaders.getFonts('dev'),

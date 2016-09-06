@@ -55,6 +55,19 @@ gulp.task('serve:build', shell.task([
 ]));
 
 
+gulp.task('test:watch', shell.task([
+    'karma start ./config/karma.conf.js --colors' + getCommandString()
+]));
+
+
+gulp.task('test:run', shell.task([
+    'karma start ./config/karma.conf.js --single-run --colors' + getCommandString()
+]));
+
+
+gulp.task('test', gulp.task('test:run'));
+
+
 // Don't work for the moment... Spam in console
 //gulp.task('server:dev:dashboard', shell.task([
 //    'webpack-dev-server --config ./config/webpack.dev.js --progress --watch'

@@ -1,22 +1,15 @@
-//import DashboardClassController from './dashboard-class.controller';
-//import appDashboardClass from './dashboard-class.module';
+let DashboardController;
 
-describe('DashboardClassController', () => {
-    //beforeEach(angular.mock.module(appDashboardClass));
-
-    //beforeEach(inject((_DashboardClassController_) => {
-    //    DashboardClassController = _DashboardClassController_;
-    //}));
-
-    it('should activate', function() {
-        //DashboardClassController.activate();
-        //fail();
-        var t = 'https://github.com/preboot/angular-webpack';
-        expect(t).toBe('https://github.com/preboot/angular-webpack');
+describe('DashboardController', () => {
+    beforeEach(() => {
+        angular.mock.inject(($controller, $rootScope) => {
+            DashboardController = $controller('DashboardController as vm', { $scope: $rootScope.$new() });
+        });
     });
 
-    it('should tbalbla', () =>  {
-        expect('fe').toBe('fe');
-    })
-
+    it('should return the expected string \'My Awesome String\'', function() {
+        var t = 'https://github.com/preboot/angular-webpack';
+        //expect(t).toBe('https://github.com/preboot/angular-webpack');
+        expect('My Awesome String').toBe(DashboardController.getText());
+    });
 });

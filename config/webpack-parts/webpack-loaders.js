@@ -9,6 +9,7 @@ exports.getNgAnnotate = function () {
                 {
                     test: /\.js|.ts$/,
                     loader: 'ng-annotate-loader',
+                    include: [helpers.root('src')],
                     //exclude: [/\.(spec|e2e)\.(js|ts)$/]
                 }
             ]
@@ -27,6 +28,7 @@ exports.getBabel = function () {
                         presets: ['es2015'],
                         compact: false
                     },
+                    include: [helpers.root('src')],
                     //exclude: [/\.(spec|e2e)\.js$/]
                 }
             ]
@@ -42,6 +44,7 @@ exports.getAwesomeTypescript = function () {
                 {
                     test: /\.ts$/,
                     loader: 'awesome-typescript-loader',
+                    include: [helpers.root('src')],
                     //exclude: [/\.(spec|e2e)\.ts$/]
                 }
             ]
@@ -56,6 +59,7 @@ exports.getHtml = function () {
                 {
                     test: /\.html$/,
                     loader: 'html-loader',
+                    include: [helpers.root('src')]
                 }
             ]
         }
@@ -69,6 +73,7 @@ exports.getJson = function () {
                 {
                     test: /\.json/,
                     loader: 'json-loader',
+                    include: [helpers.root('src')]
                 }
             ]
         }
@@ -88,7 +93,8 @@ exports.getScss = function (mode) {
                 {
                     test: /\.scss$/,
                     loader: ExtractTextPlugin.extract('style-loader?sourceMap',
-                        ['css-loader?sourceMap!postcss-loader', 'sass-loader?sourceMap'])
+                        ['css-loader?sourceMap!postcss-loader', 'sass-loader?sourceMap']),
+                    include: [helpers.root('src')]
                 }
             ]
         };
@@ -102,10 +108,11 @@ exports.getScss = function (mode) {
                 loaders: [
                     {
                         test: /\.scss$/,
-                        loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+                        loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
                         // Until this issue is not fixed, we cannot use sourceMap on Firefox and Chrome
                         // https://github.com/jtangelder/sass-loader/issues/194
                         // loaders: ['style-loader', 'css?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
+                        include: [helpers.root('src')]
                     }
                 ]
             }
@@ -142,7 +149,7 @@ exports.getImages = function (mode, limit) {
                         // Look if I can use helpers.root here
                         name: helpers.pathConcat('assets', 'images', name + '.[ext]')
                     },
-                    // include: helpers.root('src', 'assets', 'images')
+                    include: helpers.root('src', 'assets', 'images')
                 }
             ]
         }

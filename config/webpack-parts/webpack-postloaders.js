@@ -15,7 +15,7 @@ exports.getIstanbulInstrumenter = function () {
                     test: /\.(js|ts)$/,
                     loader: 'istanbul-instrumenter-loader',
                     include: helpers.root('src'),
-                    //exclude: [/\.(e2e|spec)\.ts$/]
+                    exclude: [/\.(spec|e2e|route|module|config|constant|run)\.(js|ts)$/]
                 }
             ]
         }
