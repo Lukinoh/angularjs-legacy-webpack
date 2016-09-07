@@ -3,7 +3,8 @@
         # hello this is my comment
         browser: true,
         commonjs: true,
-        es6: true # hello this is my comment
+        es6: true, # hello this is my comment
+        jasmine: true
     },
     extends: "eslint:recommended",
     globals: {

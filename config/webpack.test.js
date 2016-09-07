@@ -28,7 +28,9 @@ var productionConfig = merge(
     wpLoaders.getHtml(),
     wpLoaders.getJson(),
     wpPostLoaders.getIstanbulInstrumenter(),
-    wpBase.getDevServer('dev')
+    wpBase.getDevServer('dev'),
+    wpPlugins.getSassLint()
+
 
     //
     //wpLoaders.getNgAnnotate(),

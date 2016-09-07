@@ -5,6 +5,9 @@
 @import '~app/components/dashboard-ts/dashboard-ts.controller';
 @import '~app/components/dashboard-ng-included/dashboard-ng-included.controller';
 @import '~app/shared/widgets/rating/rating.directive';
+@import '~app/shared/widgets/level/level.component';
+@import '~app/shared/widgets/level-es6/level-es6.component';
+@import '~app/shared/widgets/level-ts/level-ts.component';
 @import '~app/components/image-selector-es6/image-selector-es6.controller';
 @import '~app/components/image-selector-require/image-selector-require.controller';
 @import '~app/components/google-closure/google-closure.controller';

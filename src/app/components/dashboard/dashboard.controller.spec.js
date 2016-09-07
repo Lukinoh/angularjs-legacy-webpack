@@ -7,9 +7,7 @@ describe('DashboardController', () => {
         });
     });
 
-    it('should return the expected string \'My Awesome String\'', function() {
-        var t = 'https://github.com/preboot/angular-webpack';
-        //expect(t).toBe('https://github.com/preboot/angular-webpack');
-        expect('My Awesome String').toBe(DashboardController.getText());
+    it('should return the string \'My Awesome Dashboard\'', function() {
+        expect('My Awesome Dashboard').toBe(DashboardController.getText());
     });
 });

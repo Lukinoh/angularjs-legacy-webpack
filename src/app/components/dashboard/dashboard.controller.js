@@ -14,7 +14,6 @@ function DashboardController(logger) {
     }
 
     function getText() {
-        return 'My Awesome String';
+        return 'My Awesome Dashboard';
     }
-
 }

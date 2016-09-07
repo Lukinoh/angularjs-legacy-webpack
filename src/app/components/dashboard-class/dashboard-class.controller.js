@@ -11,6 +11,9 @@ export default class DashboardClassController {
         this.logger.info('Dashboard Class Controller Activated !', {}, 'Status');
     }
 
+    getText() {
+        return 'My Awesome Dashboard Class';
+    }
     // No more private function, only public
 }
 

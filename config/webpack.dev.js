@@ -8,7 +8,7 @@ var wpLoaders = require('./webpack-parts/webpack-loaders');
 
 var developmentConfig = merge(
     commonConfig,
-    wpBase.getOutput('dev'),
+    wpBase.getOutput('prod'),
     wpBase.getDevTool('source-map'),
     wpBase.getDevServer('dev'),
     wpLoaders.getScss('dev'),

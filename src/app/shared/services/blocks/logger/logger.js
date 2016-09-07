@@ -11,6 +11,9 @@ function logger($log, toastr) {
         success: success,
         warning: warning,
 
+        // Used as testing example for services
+        getText: getText,
+
         // straight to console; bypass toastr
         log: $log.log
     };
@@ -37,5 +40,9 @@ function logger($log, toastr) {
     function warning(message, data, title) {
         toastr.warning(message, title);
         $log.warn('Warning: ' + message, data);
+    }
+
+    function getText() {
+        return 'My Awesome Logger';
     }
 }
