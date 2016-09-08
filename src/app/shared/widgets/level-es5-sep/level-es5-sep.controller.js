@@ -1,6 +1,6 @@
-export default LevelSepController;
+export default LevelEs5SepController;
 
-function LevelSepController(_) {
+function LevelEs5SepController(_) {
     'ngInject';
     const vm = this;
 
