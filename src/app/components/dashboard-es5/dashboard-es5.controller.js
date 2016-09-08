@@ -14,6 +14,6 @@ function DashboardEs5Controller(logger) {
     }
 
     function getText() {
-        return 'My Awesome Dashboard';
+        return 'My Awesome Dashboard Es5';
     }
 }

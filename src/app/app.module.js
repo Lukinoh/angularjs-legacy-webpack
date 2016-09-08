@@ -1,7 +1,7 @@
 import appCore from 'app/components/core/core.module';
 import appWidgets from 'app/shared/widgets/widgets.module';
 import appDashboardEs5 from 'app/components/dashboard-es5/dashboard-es5.module';
-import appDashboardClass from 'app/components/dashboard-class/dashboard-class.module';
+import appDashboardEs6 from 'app/components/dashboard-es6/dashboard-es6.module';
 import appDashboardTs from 'app/components/dashboard-ts/dashboard-ts.module';
 import appDashboardNgIncluded from 'app/components/dashboard-ng-included/dashboard-ng-included.module';
 import appImageSelectorEs6 from 'app/components/image-selector-es6/image-selector-es6.module';
@@ -18,7 +18,7 @@ export default angular
         appCore,
         appWidgets,
         appDashboardEs5,
-        appDashboardClass,
+        appDashboardEs6,
         appDashboardTs,
         appDashboardNgIncluded,
         appImageSelectorEs6,
