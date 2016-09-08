@@ -1,16 +1,16 @@
-export default DashboardController;
+export default DashboardEs5Controller;
 
-function DashboardController(logger) {
+function DashboardEs5Controller(logger) {
     'ngInject'; // The old manner (i.e comment) work also, but this is better explicit.
 
     var vm = this;
-    vm.title = 'Dashboard';
+    vm.title = 'Dashboard Es5';
     vm.getText = getText;
 
     activate();
 
     function activate() {
-        logger.info('Dashboard Controller Activated !', {}, 'Status');
+        logger.info('Dashboard Es5 Controller Activated !', {}, 'Status');
     }
 
     function getText() {

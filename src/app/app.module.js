@@ -1,6 +1,6 @@
 import appCore from 'app/components/core/core.module';
 import appWidgets from 'app/shared/widgets/widgets.module';
-import appDashboard from 'app/components/dashboard/dashboard.module';
+import appDashboardEs5 from 'app/components/dashboard-es5/dashboard-es5.module';
 import appDashboardClass from 'app/components/dashboard-class/dashboard-class.module';
 import appDashboardTs from 'app/components/dashboard-ts/dashboard-ts.module';
 import appDashboardNgIncluded from 'app/components/dashboard-ng-included/dashboard-ng-included.module';
@@ -17,7 +17,7 @@ export default angular
     .module('app', [
         appCore,
         appWidgets,
-        appDashboard,
+        appDashboardEs5,
         appDashboardClass,
         appDashboardTs,
         appDashboardNgIncluded,
