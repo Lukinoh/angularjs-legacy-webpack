@@ -5,6 +5,12 @@
 @import '~app/components/dashboard-ts/dashboard-ts.controller';
 @import '~app/components/dashboard-ng-included/dashboard-ng-included.controller';
 @import '~app/shared/widgets/rating/rating.directive';
+@import '~app/shared/widgets/level/level.component';
+@import '~app/shared/widgets/level-sep/level-sep.component';
+@import '~app/shared/widgets/level-es6/level-es6.component';
+@import '~app/shared/widgets/level-es6-sep/level-es6-sep.component';
+@import '~app/shared/widgets/level-ts/level-ts.component';
+@import '~app/shared/widgets/level-ts-sep/level-ts-sep.component';
 @import '~app/components/image-selector-es6/image-selector-es6.controller';
 @import '~app/components/image-selector-require/image-selector-require.controller';
 @import '~app/components/google-closure/google-closure.controller';
