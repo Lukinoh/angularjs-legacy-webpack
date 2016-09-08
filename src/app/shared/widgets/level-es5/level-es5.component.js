@@ -1,21 +1,20 @@
-import levelHtml from './level.component.html';
+import levelEs5Html from './level-es5.component.html';
 
-export {LevelComponent, LevelController};
+export {LevelEs5Component, LevelEs5Controller};
 
-
-function LevelComponent() {
+function LevelEs5Component() {
     return {
         bindings: {
             max: '<',
         },
-        controller: LevelController,
+        controller: LevelEs5Controller,
         controllerAs: 'vm',
         //controller: 'LevelController as vm',
-        template: levelHtml
+        template: levelEs5Html
     };
 }
 
-function LevelController(_) {
+function LevelEs5Controller(_) {
     'ngInject';
     const vm = this;
 
