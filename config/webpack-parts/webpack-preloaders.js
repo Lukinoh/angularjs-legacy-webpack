@@ -33,7 +33,7 @@ exports.getTslint = function () {
 
         },
         tslint: {
-            configuration: helpers.yamlToJson(helpers.root('config', 'lints', 'tslint.yml'))
+            configuration: require(helpers.root('config', 'lints', 'tslint.json'))
         }
     };
 };

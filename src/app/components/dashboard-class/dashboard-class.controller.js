@@ -4,7 +4,7 @@ export default class DashboardClassController {
 
         this.title = 'Dashboard Class';
         this.logger = logger;
-        this.activate();
+        this.activate()
     }
 
     activate() {

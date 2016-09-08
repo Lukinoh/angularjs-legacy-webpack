@@ -16,7 +16,7 @@ class LevelTsController {
     max: number;
 
     // Local
-    level: number
+    level: number;
 
     constructor(private _: _.LoDashStatic) {
         'ngInject';

@@ -7,7 +7,7 @@ export default class DashboardTsController {
         'ngInject';
         this.title = 'Dashboard Ts';
         this.logger = logger;
-        this.activate();
+        this.activate()
     }
 
     activate() {
