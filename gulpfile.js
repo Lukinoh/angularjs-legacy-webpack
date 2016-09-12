@@ -20,12 +20,12 @@ function getCommandString() {
  */
 
 gulp.task('server:dev', shell.task([
-    'webpack-dev-server --colors --config ./config/webpack.dev.js ' + getCommandString()
+    'webpack-dev-server --config ./config/webpack.dev.js --colors' + getCommandString()
 ]));
 
 
 gulp.task('server:prod', shell.task([
-    'webpack-dev-server --colors --config ./config/webpack.prod.js --progress --watch ' + getCommandString()
+    'webpack-dev-server --config ./config/webpack.prod.js --colors --progress --watch ' + getCommandString()
 ]));
 
 gulp.task('server', gulp.task('server:dev'));
@@ -36,11 +36,11 @@ gulp.task('server', gulp.task('server:dev'));
  */
 
 gulp.task('build:dev', shell.task([
-    'webpack --colors --config ./config/webpack.dev.js --progress ' + getCommandString()
+    'webpack --config ./config/webpack.dev.js --colors --progress ' + getCommandString()
 ]));
 
 gulp.task('build:prod', shell.task([
-    'webpack --colors --config ./config/webpack.prod.js --progress ' + getCommandString()
+    'webpack --config ./config/webpack.prod.js --colors --progress ' + getCommandString()
 ]));
 
 gulp.task('build', gulp.task('build:prod'));
@@ -51,12 +51,12 @@ gulp.task('build', gulp.task('build:prod'));
  */
 
 gulp.task('test:watch', shell.task([
-    'karma start --colors ./config/karma.conf.js' + getCommandString()
+    'karma start ./config/karma.conf.js --colors ' + getCommandString()
 ]));
 
 
 gulp.task('test:run', shell.task([
-    'karma start --colors ./config/karma.conf.js --single-run' + getCommandString()
+    'karma start ./config/karma.conf.js --colors --single-run' + getCommandString()
 ]));
 
 

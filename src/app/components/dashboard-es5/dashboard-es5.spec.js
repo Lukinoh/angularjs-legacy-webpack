@@ -8,6 +8,6 @@ describe('DashboardEs5Controller', () => {
     });
 
     it('should return the string \'My Awesome Dashboard\'', function() {
-        expect('My Awesome Dashboard').toBe(DashboardEs5Controller.getText());
+        expect('My Awesome Dashboard Es5').toBe(DashboardEs5Controller.getText());
     });
 });
