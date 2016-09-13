@@ -1,14 +1,14 @@
 var path = require('path');
-var fs = require("fs");
-var stripBom = require("strip-bom");
-var yaml = require('js-yaml');
 
 // Helper functions
 var ROOT = path.resolve(__dirname, '..');
 
-function isWebpackDevServer() {
-    return process.argv[1] && !! (/webpack-dev-server$/.exec(process.argv[1]));
-}
+var yargs = require('yargs');
+var unparse = require('unparse-args');
+
+var argv = yargs.argv;
+
+
 
 // Determine automagically the root folder and create a path from it
 function root(args) {
@@ -21,11 +21,12 @@ function pathConcat(args) {
     return path.join.apply(path, args);
 }
 
-function yamlToJson(filePath) {
-    return yaml.safeLoad(stripBom(fs.readFileSync(filePath, "utf8")));
+function getArgsAsString() {
+    argv._ = '';
+    return unparse(argv).command_string;
 }
 
-exports.isWebpackDevServer = isWebpackDevServer;
+
 exports.root = root;
 exports.pathConcat = pathConcat;
-exports.yamlToJson = yamlToJson;
+exports.getArgsAsString = getArgsAsString;

@@ -93,7 +93,7 @@ exports.getBrowserSync = function () {
     };
 };
 
-exports.getSassLint = function() {
+exports.getSassLint = function(failOnHint) {
     return {
         plugins: [
             new SassLintPlugin({
@@ -103,7 +103,9 @@ exports.getSassLint = function() {
                     'html-webpack-plugin for "index.html"'
                 ],
                 glob: helpers.pathConcat('src', '**', '*.scss'),
-                quiet: false
+                quiet: false,
+                failOnWarning: failOnHint,
+                failOnError: failOnHint
             })
         ]
     };

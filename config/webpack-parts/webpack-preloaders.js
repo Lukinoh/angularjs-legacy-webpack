@@ -1,6 +1,6 @@
 const helpers = require('../helpers');
 
-exports.getEslint = function () {
+exports.getEslint = function (failOnHint) {
     return {
         module: {
             preLoaders: [
@@ -14,13 +14,15 @@ exports.getEslint = function () {
         },
         eslint: {
             configFile: helpers.root('config', 'lints', '.eslintrc.yml'),
-            ignorePath: helpers.root('config', 'lints', '.eslintignore')
+            ignorePath: helpers.root('config', 'lints', '.eslintignore'),
+            failOnWarning: failOnHint,
+            failOnError: failOnHint
         }
     };
 };
 
 
-exports.getTslint = function () {
+exports.getTslint = function (failOnHint) {
     return {
         module: {
             preLoaders: [
@@ -33,7 +35,8 @@ exports.getTslint = function () {
 
         },
         tslint: {
-            configuration: require(helpers.root('config', 'lints', 'tslint.json'))
+            configuration: require(helpers.root('config', 'lints', 'tslint.json')),
+            failOnHint: failOnHint
         }
     };
 };

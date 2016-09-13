@@ -52,7 +52,7 @@ module.exports = function karmaConfig (config) {
 
         // level-sep of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_ERROR,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -87,10 +87,11 @@ module.exports = function karmaConfig (config) {
             //}
         },
 
-        webpack: require('./webpack.test.js'),
+        webpack: require('./webpack.test.js')(config.failOnHint),
 
         webpackMiddleware: {
-            noInfo: true
+            noInfo: true,
+            stats: 'errors-only'
         }
     });
 };
