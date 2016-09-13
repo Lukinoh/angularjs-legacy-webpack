@@ -3,6 +3,8 @@
  * Avoids some weird issues when using webpack + angular.
  * */
 
+// FIXME: Possibility to write it in ES6 (should add it to the transpiler webpack probably.
+
 require('angular-mocks/angular-mocks');
 
 

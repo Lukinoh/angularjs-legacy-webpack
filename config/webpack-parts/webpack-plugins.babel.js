@@ -1,30 +1,31 @@
-const webpack = require('webpack');
-const helpers = require('../helpers');
+import webpack from 'webpack';
+import helpers from '../helpers';
+import atl from 'awesome-typescript-loader';
 
 // Plugins:
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const SassLintPlugin = require('sasslint-webpack-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import SassLintPlugin from 'sasslint-webpack-plugin';
+const ForkCheckerPlugin = atl.ForkCheckerPlugin;
 
-exports.getForkChecker = function () {
+export function getForkChecker() {
     return {
         plugins: [
             new ForkCheckerPlugin()
         ]
     };
-};
+}
 
-exports.getOccurenceOrder = function () {
+export function getOccurenceOrder() {
     return {
         plugins: [
             new webpack.optimize.OccurenceOrderPlugin(true)
         ]
     };
-};
+}
 
-exports.getCommonsChunk = function () {
+export function getCommonsChunk() {
     return {
         plugins: [
             new webpack.optimize.CommonsChunkPlugin({
@@ -32,18 +33,18 @@ exports.getCommonsChunk = function () {
             })
         ]
     };
-};
+}
 
 // Don't use in watch mode
-exports.getDedupe = function() {
+export function getDedupe() {
     return {
         plugins: [
             new webpack.optimize.DedupePlugin()
         ]
     };
-};
+}
 
-exports.getHtmlWebpack = function () {
+export function getHtmlWebpack() {
     return {
         plugins: [
             new HtmlWebpackPlugin({
@@ -52,10 +53,10 @@ exports.getHtmlWebpack = function () {
             })
         ]
     };
-};
+}
 
 // Could be more precises
-exports.getCleanWebpackBuildFolder = function () {
+export function getCleanWebpackBuildFolder() {
     return {
         plugins: [
             new CleanWebpackPlugin(['build'], {
@@ -63,11 +64,11 @@ exports.getCleanWebpackBuildFolder = function () {
             }),
         ]
     };
-};
+}
 
 
 // Could add options
-exports.getBrowserSync = function () {
+export function getBrowserSync() {
     return {
         plugins: [
             new BrowserSyncPlugin(
@@ -91,9 +92,9 @@ exports.getBrowserSync = function () {
             )
         ]
     };
-};
+}
 
-exports.getSassLint = function(failOnHint) {
+export function getSassLint(failOnHint = false) {
     return {
         plugins: [
             new SassLintPlugin({
@@ -109,9 +110,9 @@ exports.getSassLint = function(failOnHint) {
             })
         ]
     };
-};
+}
 
-exports.getUglifyJs = function() {
+export function getUglifyJs() {
     return {
         plugins: [
             new webpack.optimize.UglifyJsPlugin({
@@ -121,4 +122,4 @@ exports.getUglifyJs = function() {
             })
         ]
     };
-};
+}

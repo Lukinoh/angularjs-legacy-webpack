@@ -7,12 +7,12 @@ import helpers from '../helpers';
  */
 
 gulp.task('test:watch', shell.task([
-    'karma start ./config/karma.conf.js --colors ' + helpers.getArgsAsString()
+    'karma start ./config/karma/karma.conf.js --colors ' + helpers.getArgsAsString()
 ]));
 
 
 gulp.task('test:run', shell.task([
-    'karma start ./config/karma.conf.js --colors --single-run --fail-on-hint ' + helpers.getArgsAsString()
+    'karma start ./config/karma/karma.conf.js --colors --single-run --fail-on-hint ' + helpers.getArgsAsString()
 ]));
 
 

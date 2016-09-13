@@ -1,11 +1,11 @@
-// Karma configuration
-// Generated on Mon Sep 05 2016 10:44:40 GMT+0200 (CEST)
+// You should imagine that this file is in the folder karma when you write path (i.e. basePath: ../../).
+import webpackTestConfig from './webpack.test.babel';
 
-module.exports = function karmaConfig (config) {
+export default (config) => {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '../',
+        basePath: '../../',
 
 
         // frameworks to use
@@ -52,7 +52,7 @@ module.exports = function karmaConfig (config) {
 
         // level-sep of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_ERROR,
+        logLevel: config.LOG_INFO,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -80,14 +80,10 @@ module.exports = function karmaConfig (config) {
                 { type: 'text-summary' },
                 { type: 'json' },
                 { type: 'html' },
-            ],
-            //instrumenters: { isparta : require('isparta') },
-            //instrumenter: {
-            //    '**/*.js': 'isparta'
-            //}
+            ]
         },
 
-        webpack: require('./webpack.test.js')(config.failOnHint),
+        webpack: webpackTestConfig(config.failOnHint),
 
         webpackMiddleware: {
             noInfo: true,

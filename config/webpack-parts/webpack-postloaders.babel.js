@@ -1,6 +1,6 @@
-const helpers = require('../helpers');
+import helpers from '../helpers';
 
-exports.getIstanbulInstrumenter = function () {
+export function getIstanbulInstrumenter() {
     return {
         module: {
             postLoaders: [
@@ -20,4 +20,4 @@ exports.getIstanbulInstrumenter = function () {
             ]
         }
     };
-};
+}

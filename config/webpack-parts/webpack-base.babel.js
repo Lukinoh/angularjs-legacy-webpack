@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const helpers = require('../helpers');
+import webpack from 'webpack';
+import helpers from '../helpers';
 
-exports.getEntry = function () {
+export function getEntry() {
     return {
         entry: {
             app: helpers.root('src', 'app', 'app.module.js'),
@@ -10,9 +10,9 @@ exports.getEntry = function () {
             vendorStyle: helpers.root('src', 'assets', 'css', 'vendor.scss')
         }
     };
-};
+}
 
-exports.getResolve = function () {
+export function getResolve() {
     return {
         resolve: {
             extensions: ['', '.ts', '.js', '.json'],
@@ -20,9 +20,9 @@ exports.getResolve = function () {
             modulesDirectories: ['node_modules'],
         }
     };
-};
+}
 
-exports.getOutput = function (mode) {
+export function getOutput(mode) {
     var name = '[name]';
     if (mode === 'prod') {
         name = '[name].[chunkhash]';
@@ -35,16 +35,16 @@ exports.getOutput = function (mode) {
             sourceMapFilename: name + '.bundle.map',
         }
     };
-};
+}
 
-exports.getDevTool = function(type) {
+export function getDevTool(type) {
     return {
         devtool: type
     };
-};
+}
 
 // Maybe add options in future
-exports.getDevServer = function(mode) {
+export function getDevServer(mode) {
     if (mode === 'prod') {
         return {
             devServer: {
@@ -71,6 +71,4 @@ exports.getDevServer = function(mode) {
             ]
         };
     }
-
-
-};
+}

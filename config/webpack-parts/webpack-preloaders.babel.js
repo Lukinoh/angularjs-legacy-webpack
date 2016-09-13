@@ -1,6 +1,6 @@
-const helpers = require('../helpers');
+import helpers from '../helpers';
 
-exports.getEslint = function (failOnHint) {
+export function getEslint(failOnHint = false) {
     return {
         module: {
             preLoaders: [
@@ -19,10 +19,9 @@ exports.getEslint = function (failOnHint) {
             failOnError: failOnHint
         }
     };
-};
+}
 
-
-exports.getTslint = function (failOnHint) {
+export function getTslint(failOnHint = false) {
     return {
         module: {
             preLoaders: [

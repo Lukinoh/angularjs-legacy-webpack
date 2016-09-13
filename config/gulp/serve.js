@@ -9,12 +9,12 @@ import helpers from '../helpers';
  */
 
 gulp.task('serve:dev', shell.task([
-    'webpack-dev-server --config ./config/webpack.dev.js --colors' + helpers.getArgsAsString()
+    'webpack-dev-server --config ./config/webpack.dev.babel.js --colors --progress ' + helpers.getArgsAsString()
 ]));
 
 
 gulp.task('serve:prod', shell.task([
-    'webpack-dev-server --config ./config/webpack.prod.js --colors --progress --watch ' + helpers.getArgsAsString()
+    'webpack-dev-server --config ./config/webpack.prod.babel.js --colors --progress --watch ' + helpers.getArgsAsString()
 ]));
 
 gulp.task('serve', gulp.task('serve:dev'));

@@ -1,12 +1,12 @@
-const validate = require('webpack-validator');
-const merge = require('webpack-merge');
+import validate from 'webpack-validator';
+import merge from 'webpack-merge';
 
-const wpBase = require('./webpack-parts/webpack-base');
-const wpPreLoaders = require('./webpack-parts/webpack-preloaders');
-const wpLoaders = require('./webpack-parts/webpack-loaders');
-const wpPlugins = require('./webpack-parts/webpack-plugins');
+import * as wpBase from './webpack-parts/webpack-base.babel';
+import * as wpPreLoaders from './webpack-parts/webpack-preloaders.babel';
+import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
+import * as wpPlugins from './webpack-parts/webpack-plugins.babel';
 
-var commonConfig = merge({},
+const commonConfig = merge({},
     wpBase.getEntry(),
     wpBase.getResolve(),
     wpPreLoaders.getEslint(),
@@ -25,6 +25,6 @@ var commonConfig = merge({},
     wpPlugins.getBrowserSync()
 );
 
-module.exports = validate(commonConfig, {
+export default validate(commonConfig, {
     quiet: true
 });

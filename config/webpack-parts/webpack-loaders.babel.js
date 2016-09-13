@@ -1,8 +1,8 @@
-const helpers = require('../helpers');
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import helpers from '../helpers';
+import autoprefixer from 'autoprefixer';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-exports.getNgAnnotate = function () {
+export function getNgAnnotate() {
     return {
         module: {
             loaders: [
@@ -15,9 +15,9 @@ exports.getNgAnnotate = function () {
             ]
         }
     };
-};
+}
 
-exports.getBabel = function () {
+export function getBabel() {
     return {
         module: {
             loaders: [
@@ -34,10 +34,10 @@ exports.getBabel = function () {
             ]
         }
     };
-};
+}
 
 
-exports.getAwesomeTypescript = function () {
+export function getAwesomeTypescript() {
     return {
         module: {
             loaders: [
@@ -50,9 +50,9 @@ exports.getAwesomeTypescript = function () {
             ]
         }
     };
-};
+}
 
-exports.getHtml = function () {
+export function getHtml() {
     return {
         module: {
             loaders: [
@@ -64,9 +64,9 @@ exports.getHtml = function () {
             ]
         }
     };
-};
+}
 
-exports.getJson = function () {
+export function getJson() {
     return {
         module: {
             loaders: [
@@ -78,11 +78,11 @@ exports.getJson = function () {
             ]
         }
     };
-};
+}
 
 
 // More intellgent to do
-exports.getScss = function (mode) {
+export function getScss(mode) {
     var configLoaderScss = {};
 
     if (mode === 'prod') {
@@ -126,9 +126,9 @@ exports.getScss = function (mode) {
     };
 
     return configLoaderScss;
-};
+}
 
-exports.getImages = function (mode, limit) {
+export function getImages(mode, limit) {
     var name = '[name]';
     if (mode === 'prod') {
         name = '[name].[hash]';
@@ -154,10 +154,10 @@ exports.getImages = function (mode, limit) {
             ]
         }
     };
-};
+}
 
 // We could use the same trick with somesize and embedding like images
-exports.getFonts = function (mode) {
+export function getFonts(mode) {
     var name = '[name]';
     if (mode === 'prod') {
         name = '[name].[hash]';
@@ -176,9 +176,9 @@ exports.getFonts = function (mode) {
             ]
         }
     };
-};
+}
 
-exports.getMiscellaneous = function (mode) {
+export function getMiscellaneous(mode) {
     var name = '[name]';
     if (mode === 'prod') {
         name = '[name].[hash]';
@@ -198,9 +198,9 @@ exports.getMiscellaneous = function (mode) {
             ]
         }
     };
-};
+}
 
-exports.getIstanbulInstrumenter = function () {
+export function getIstanbulInstrumenter() {
     return {
         module: {
             loaders: [
@@ -215,4 +215,4 @@ exports.getIstanbulInstrumenter = function () {
             ]
         }
     }
-};
+}
