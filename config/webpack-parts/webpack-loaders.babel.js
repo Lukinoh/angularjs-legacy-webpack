@@ -71,7 +71,7 @@ export function getJson() {
         module: {
             loaders: [
                 {
-                    test: /\.json/,
+                    test: /\.json$/,
                     loader: 'json-loader',
                     include: [helpers.root('src')]
                 }
