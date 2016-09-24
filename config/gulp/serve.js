@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import shell from 'gulp-shell';
 import browserSync from 'browser-sync';
 import fs from 'fs';
-import helpers from '../helpers';
+import * as helpers from '../helpers.babel';
 
 /**
  * Run the code on webpack-dev-server

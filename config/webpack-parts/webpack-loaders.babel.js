@@ -1,4 +1,4 @@
-import helpers from '../helpers';
+import * as helpers from '../helpers.babel';
 import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 

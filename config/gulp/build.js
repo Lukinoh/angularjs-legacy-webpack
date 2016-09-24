@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import shell from 'gulp-shell';
-import helpers from '../helpers';
+import * as helpers from '../helpers.babel';
 
 /**
  * Build the code with webpack

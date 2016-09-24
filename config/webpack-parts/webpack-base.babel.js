@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import helpers from '../helpers';
+import * as helpers from '../helpers.babel';
 
 export function getEntry() {
     return {

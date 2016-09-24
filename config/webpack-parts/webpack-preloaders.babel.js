@@ -1,4 +1,4 @@
-import helpers from '../helpers';
+import * as helpers from '../helpers.babel';
 
 export function getEslint(failOnHint = false) {
     return {
