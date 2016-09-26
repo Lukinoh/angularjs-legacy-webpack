@@ -20,3 +20,8 @@ export function getArgsAsString() {
     argv._ = '';
     return unparse(argv).command_string;
 }
+
+export const ENV = {
+    dev: 'dev',
+    prod: 'prod'
+};

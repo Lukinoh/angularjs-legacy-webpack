@@ -1,6 +1,8 @@
 import webpack from 'webpack';
 import * as helpers from '../helpers.babel';
 
+const ENV = helpers.ENV;
+
 export function getEntry() {
     return {
         entry: {
@@ -22,9 +24,9 @@ export function getResolve() {
     };
 }
 
-export function getOutput(mode) {
+export function getOutput(env) {
     var name = '[name]';
-    if (mode === 'prod') {
+    if (env === ENV.prod) {
         name = '[name].[chunkhash]';
     }
 
@@ -44,8 +46,8 @@ export function getDevTool(type) {
 }
 
 // Maybe add options in future
-export function getDevServer(mode) {
-    if (mode === 'prod') {
+export function getDevServer(env) {
+    if (env === ENV.prod) {
         return {
             devServer: {
                 port: 9000,

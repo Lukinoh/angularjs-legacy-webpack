@@ -1,6 +1,7 @@
 import validate from 'webpack-validator';
 import merge from 'webpack-merge';
 
+import {ENV} from './helpers.babel';
 import * as wpBase from './webpack-parts/webpack-base.babel';
 import * as wpPreLoaders from './webpack-parts/webpack-preloaders.babel';
 import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
@@ -22,14 +23,14 @@ function getProductionConfig(failOnHint = false) {
         wpLoaders.getAwesomeTypescript(),
         wpLoaders.getBabel(),
         wpLoaders.getNgAnnotate(),
-        wpLoaders.getScss('dev'),
-        wpLoaders.getImages('dev'),
-        wpLoaders.getFonts('dev'),
-        wpLoaders.getMiscellaneous('dev'),
+        wpLoaders.getScss(ENV.dev),
+        wpLoaders.getImages(ENV.dev),
+        wpLoaders.getFonts(ENV.dev),
+        wpLoaders.getMiscellaneous(ENV.dev),
         wpLoaders.getHtml(),
         wpLoaders.getJson(),
         wpPostLoaders.getIstanbulInstrumenter(),
-        wpBase.getDevServer('dev'),
+        wpBase.getDevServer(ENV.dev),
         wpPlugins.getSassLint(failOnHint)
     );
 }

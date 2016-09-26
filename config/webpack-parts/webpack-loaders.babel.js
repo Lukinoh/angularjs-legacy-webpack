@@ -2,6 +2,8 @@ import * as helpers from '../helpers.babel';
 import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const ENV = helpers.ENV;
+
 export function getNgAnnotate() {
     return {
         module: {
@@ -82,10 +84,10 @@ export function getJson() {
 
 
 // More intellgent to do
-export function getScss(mode) {
+export function getScss(env) {
     var configLoaderScss = {};
 
-    if (mode === 'prod') {
+    if (env === ENV.prod) {
         configLoaderScss = {};
 
         configLoaderScss.module = {
@@ -128,9 +130,9 @@ export function getScss(mode) {
     return configLoaderScss;
 }
 
-export function getImages(mode, limit) {
+export function getImages(env, limit) {
     var name = '[name]';
-    if (mode === 'prod') {
+    if (env === ENV.prod) {
         name = '[name].[hash]';
     }
 
@@ -157,9 +159,9 @@ export function getImages(mode, limit) {
 }
 
 // We could use the same trick with somesize and embedding like images
-export function getFonts(mode) {
+export function getFonts(env) {
     var name = '[name]';
-    if (mode === 'prod') {
+    if (env === ENV.prod) {
         name = '[name].[hash]';
     }
 
@@ -178,9 +180,9 @@ export function getFonts(mode) {
     };
 }
 
-export function getMiscellaneous(mode) {
+export function getMiscellaneous(env) {
     var name = '[name]';
-    if (mode === 'prod') {
+    if (env === ENV.prod) {
         name = '[name].[hash]';
     }
 
@@ -198,21 +200,4 @@ export function getMiscellaneous(mode) {
             ]
         }
     };
-}
-
-export function getIstanbulInstrumenter() {
-    return {
-        module: {
-            loaders: [
-                {
-                    test: /\.*$/,
-                    loader: 'file-loader',
-                    query: {
-                        name: helpers.pathConcat('assets', 'miscellaneous', name + '.[ext]')
-                    },
-                    include: helpers.root('src', 'assets', 'miscellaneous')
-                }
-            ]
-        }
-    }
 }

@@ -38,4 +38,4 @@ export function getTslint(failOnHint = false) {
             failOnHint: failOnHint
         }
     };
-};
+}
