@@ -6,13 +6,9 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "include": [
-    "../node_modules/@types/**/*.ts",
-    "../src/**/*.ts"
-  ],
   "exclude": [
-    "../node_modules",
-    "../build"
+    "node_modules",
+    "build"
   ]
 }
 
