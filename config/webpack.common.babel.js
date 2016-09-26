@@ -6,6 +6,11 @@ import * as wpPreLoaders from './webpack-parts/webpack-preloaders.babel';
 import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
 import * as wpPlugins from './webpack-parts/webpack-plugins.babel';
 
+/*
+ * Webpack configuration
+ *
+ * See: http://webpack.github.io/docs/configuration.html#cli
+ */
 const commonConfig = merge({},
     wpBase.getEntry(),
     wpBase.getResolve(),

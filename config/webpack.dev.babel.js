@@ -7,6 +7,11 @@ import {ENV} from './helpers.babel';
 import * as wpBase from './webpack-parts/webpack-base.babel';
 import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
 
+/*
+ * Webpack configuration
+ *
+ * See: http://webpack.github.io/docs/configuration.html#cli
+ */
 const developmentConfig = merge(
     commonConfig,
     wpBase.getOutput(ENV.dev),

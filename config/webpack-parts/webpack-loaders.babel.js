@@ -1,9 +1,22 @@
+/*
+ * An array of automatically applied loaders.
+ *
+ * IMPORTANT: The loaders here are resolved relative to the resource which they are applied to.
+ * This means they are not resolved relative to the configuration file.
+ *
+ * See: http://webpack.github.io/docs/configuration.html#module-loaders
+ */
 import * as helpers from '../helpers.babel';
 import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const ENV = helpers.ENV;
 
+/*
+ * Webpack loader to annotate angular applications. Generates a sourcemaps as well.
+ *
+ * See: https://github.com/huston007/ng-annotate-loader
+ */
 export function getNgAnnotate() {
     return {
         module: {
@@ -11,7 +24,7 @@ export function getNgAnnotate() {
                 {
                     test: /\.js|.ts$/,
                     loader: 'ng-annotate-loader',
-                    include: [helpers.root('src')],
+                    include: [helpers.root('src')]
                     //exclude: [/\.(spec|e2e)\.(js|ts)$/]
                 }
             ]
@@ -19,6 +32,11 @@ export function getNgAnnotate() {
     };
 }
 
+/*
+ * Babel loader support for ES6/ES2015 JavaScript
+ *
+ * See: https://github.com/babel/babel-loader
+ */
 export function getBabel() {
     return {
         module: {
@@ -30,7 +48,7 @@ export function getBabel() {
                         presets: ['es2015'],
                         compact: false
                     },
-                    include: [helpers.root('src')],
+                    include: [helpers.root('src')]
                     //exclude: [/\.(spec|e2e)\.js$/]
                 }
             ]
@@ -38,7 +56,11 @@ export function getBabel() {
     };
 }
 
-
+/*
+ * Typescript loader support for .ts
+ *
+ * See: https://github.com/s-panferov/awesome-typescript-loader
+ */
 export function getAwesomeTypescript() {
     return {
         module: {
@@ -46,7 +68,7 @@ export function getAwesomeTypescript() {
                 {
                     test: /\.ts$/,
                     loader: 'awesome-typescript-loader',
-                    include: [helpers.root('src')],
+                    include: [helpers.root('src')]
                     //exclude: [/\.(spec|e2e)\.ts$/]
                 }
             ]
@@ -54,6 +76,12 @@ export function getAwesomeTypescript() {
     };
 }
 
+/*
+ * Html loader support for *.html
+ * Returns file content as string
+ *
+ * See: https://github.com/webpack/html-loader
+ */
 export function getHtml() {
     return {
         module: {
@@ -68,6 +96,11 @@ export function getHtml() {
     };
 }
 
+/*
+ * Json loader support for *.json files.
+ *
+ * See: https://github.com/webpack/json-loader
+ */
 export function getJson() {
     return {
         module: {
@@ -83,7 +116,9 @@ export function getJson() {
 }
 
 
-// More intellgent to do
+/*
+ * Too hacky, maybe something better exists ?
+ */
 export function getScss(env) {
     var configLoaderScss = {};
 
@@ -130,6 +165,11 @@ export function getScss(env) {
     return configLoaderScss;
 }
 
+/*
+ * Url loader for supporting images.
+ *
+ * See: https://github.com/webpack/url-loader
+ */
 export function getImages(env, limit) {
     var name = '[name]';
     if (env === ENV.prod) {
@@ -158,7 +198,11 @@ export function getImages(env, limit) {
     };
 }
 
-// We could use the same trick with somesize and embedding like images
+/*
+ * File loader for supporting fonts. (We could use also url-loader)
+ *
+ * See: https://github.com/webpack/file-loader
+ */
 export function getFonts(env) {
     var name = '[name]';
     if (env === ENV.prod) {
@@ -180,6 +224,11 @@ export function getFonts(env) {
     };
 }
 
+/*
+ * File loader for supporting any miscellaneous files.
+ *
+ * See: https://github.com/webpack/file-loader
+ */
 export function getMiscellaneous(env) {
     var name = '[name]';
     if (env === ENV.prod) {

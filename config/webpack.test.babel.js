@@ -8,6 +8,11 @@ import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
 import * as wpPostLoaders from './webpack-parts/webpack-postloaders.babel';
 import * as wpPlugins from './webpack-parts/webpack-plugins.babel';
 
+/*
+ * Webpack configuration
+ *
+ * See: http://webpack.github.io/docs/configuration.html#cli
+ */
 function getProductionConfig(failOnHint = false) {
     return merge(
         {

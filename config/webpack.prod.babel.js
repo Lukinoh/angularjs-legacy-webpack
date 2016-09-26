@@ -8,6 +8,11 @@ import * as wpBase from './webpack-parts/webpack-base.babel';
 import * as wpLoaders from './webpack-parts/webpack-loaders.babel';
 import * as wpPlugins from './webpack-parts/webpack-plugins.babel';
 
+/*
+ * Webpack configuration
+ *
+ * See: http://webpack.github.io/docs/configuration.html#cli
+ */
 const productionConfig = merge(
     commonConfig,
     wpBase.getOutput(ENV.prod),
