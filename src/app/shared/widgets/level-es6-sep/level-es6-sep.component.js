@@ -3,7 +3,7 @@ import levelEs6SepHtml from './level-es6-sep.component.html';
 
 const LevelEs6SepComponent = {
     bindings: {
-        max: '<',
+        max: '<'
     },
     //controller: LevelEs6SepController,
     //controllerAs: 'vm',

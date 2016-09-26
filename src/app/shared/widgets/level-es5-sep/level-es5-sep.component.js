@@ -6,7 +6,7 @@ export default LevelEs5SepComponent;
 function LevelEs5SepComponent() {
     return {
         bindings: {
-            max: '<',
+            max: '<'
         },
         //controller: 'LevelSepController as vm',
         controller: LevelEs5SepController,

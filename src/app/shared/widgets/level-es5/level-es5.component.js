@@ -5,7 +5,7 @@ export {LevelEs5Component, LevelEs5Controller};
 function LevelEs5Component() {
     return {
         bindings: {
-            max: '<',
+            max: '<'
         },
         controller: LevelEs5Controller,
         controllerAs: 'vm',
