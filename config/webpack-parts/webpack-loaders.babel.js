@@ -47,6 +47,9 @@ export function getAwesomeTypescript() {
                     test: /\.ts$/,
                     loader: 'awesome-typescript-loader',
                     include: [helpers.root('src')],
+                    query: {
+                        tsconfig: helpers.root('config', 'tsconfig.json')
+                    }
                     //exclude: [/\.(spec|e2e)\.ts$/]
                 }
             ]
