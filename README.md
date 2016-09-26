@@ -15,7 +15,7 @@ cd angularjs-legacy-webpack
 npm install
 
 # Start the server
-gulp server
+npm run gulp server
 ```
 
 ## Usage
