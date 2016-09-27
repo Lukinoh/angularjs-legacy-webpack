@@ -1,37 +1,121 @@
 {
-    env: {
-        # hello this is my comment
-        browser: true,
-        commonjs: true,
-        es6: true, # hello this is my comment
-        jasmine: true
-    },
-    extends: "eslint:recommended",
-    globals: {
-      angular: true
-    },
-    parserOptions: {
-      sourceType: "module"
-    },
-    plugins: [
-      "angular"
-    ],
-    rules: {
-        indent: [
-            "warn",
-            4
-        ],
-        linebreak-style: [
-            "error",
-            "unix"
-        ],
-        quotes: [
-            "error",
-            "single"
-        ],
-        semi: [
-            "error",
-            "always"
-        ]
-    }
+  env: {
+      # hello this is my comment
+      browser: true,
+      commonjs: true,
+      es6: true, # hello this is my comment
+      jasmine: true
+  },
+  globals: {
+    angular: true
+  },
+  parserOptions: {
+    sourceType: "module"
+  },
+  plugins: [
+    "angular"
+  ],
+  rules: {
+    # The comment 'Could break a lot of thing in some project!' means: 'Should be tried project by project'
+
+    ## Possible Errors
+    no-cond-assign: ["warn", "always"],
+    no-console: "warn",
+    no-constant-condition: "warn",
+    no-control-regex: "warn",
+    no-debugger: "warn",
+    no-dupe-args: "warn", # On use strict mode there is a parsing error because the linter
+    no-dupe-keys: "warn",
+    no-duplicate-case: "warn",
+    no-empty-character-class: "warn",
+    no-empty: "warn",
+    no-ex-assign: "warn",
+    no-extra-boolean-cast: "warn",
+    no-extra-parens: ["off", "all"],
+    no-extra-semi: "warn",
+    no-func-assign: "warn",
+    no-innver-declarations: "off", # Ignored because 'In JavaScript, prior to ES6' and we use ES6
+    no-invalid-regexp: "warn",
+    no-irregular-whitespace: "warn",
+    no-obj-calls: "warn",
+    no-prototype-builtins: "warn", # Maybe remove it if your project use a lot of these
+    no-regex-spaces: "warn",
+    no-sparse-arrays: "warn",
+    no-template-curly-in-string: "warn",
+    no-unexpected-multiline: "warn",
+    no-unreachable: "warn",
+    no-unsafe-finally: "warn",
+    no-unsafe-negation: "warn",
+    use-isnan: "warn",
+    valid-jsdoc: "warn", # Could break a lot of thing in some project!
+    valid-typeof: "warn",
+
+    ## Best Practices
+    accessor-pairs: "off",
+    array-callback-return: "warn",
+    block-scoped-var: "warn",
+    class-methods-use-this: "warn",
+    complexity: "off", # Should look  in practice if this rule is usable
+    consistent-return: "off",
+    curly: ["warn", "all"],
+    default-case: "off", # We could allow this rule and use the skip default comment
+    dot-location: ["warn", "property"],
+    dot-notation: "warn",
+    eqeqeq: ["warn", "always"],
+    guard-for-in: "warn", # Could break a lot of thing in some project!
+    no-alert: "warn",
+    no-caller: "warn",
+    no-case-declarations: "warn",
+    no-div-regex: "warn",
+    no-else-return: "warn", # Could break a lot of thing in some project!
+    no-empty-function: "warn", # Maybe we could except that for functions, arrowFunctions and methods
+    no-empty-pattern: "warn",
+    no-eq-null: "warn", # Could break a lot of thing in some project!
+    no-eval: "warn",
+    no-extend-native: "warn",
+    no-extra-bind: "warn",
+    no-extra-label: "warn",
+    no-fallthrough: "warn",
+    no-floating-decimal: "warn",
+    no-global-assign: "warn",
+    no-implicit-coercion: ["warn", { "allow": ["!!", "+"] }],
+    no-implicit-globals: "warn",
+    no-implied-eval: "warn",
+    no-invalid-this: "warn", # Could break a lot of thing in some project!
+    no-iterator: "warn",
+    no-labels: "warn",
+    no-lone-blocks: "warn",
+    no-loop-func: "warn",
+    no-magic-numbers: "warn", # Could break a lot of thing in some project!
+    no-multi-spaces: "warn",
+    no-multi-str: "warn",
+    no-new-func: "warn",
+    no-new-wrappers: "warn",
+    no-new: "warn",
+    no-octal-escape: "warn",
+    no-octal: "warn",
+    no-param-reassign: "warn", # Could also does not allow reassign of property
+    no-proto: "warn",
+    no-redeclare: "warn",
+    no-restricted-properties: "off", # Maybe we should look at what other people do for that
+    no-return-assign: "warn", # Could break a lot of thing in some project!
+    no-script-url: "warn",
+    no-self-assign: "warn",
+    no-self-compare: "warn",
+    no-sequences: "warn",
+    no-throw-literal: "warn",
+    no-unmodified-loop-condition: "warn",
+    no-unused-expressions: "warn", # Could break a lot of thing in some project! Maybe, we should allow ternary and short circuit!
+    no-unused-labels: "warn",
+    no-useless-call: "warn",
+    no-useless-concat: "warn",
+    no-useless-escape: "warn",
+    no-void: "warn",
+    no-warning-comments: "warn",
+    no-with: "warn",
+    radix: "warn",
+    vars-on-top: "warn",
+    wrap-iife: "off", # Do not need it with Webpack
+    yoda: "warn"
+  }
 }
