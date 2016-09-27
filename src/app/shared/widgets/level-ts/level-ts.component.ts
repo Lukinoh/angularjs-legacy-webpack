@@ -1,5 +1,4 @@
-// import levelTsHtml from './level-ts.component.html';
-const levelTsHtml = require('./level-ts.component.html');
+import * as levelTsHtml from './level-ts.component.html';
 
 // Order is important
 const LevelTsComponent = {

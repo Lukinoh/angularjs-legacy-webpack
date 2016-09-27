@@ -1,4 +1,4 @@
-const dashboardTsHtml = require('./dashboard-ts.controller.html');
+import * as dashboardTsHtml from './dashboard-ts.controller.html';
 
 export default setRoute;
 

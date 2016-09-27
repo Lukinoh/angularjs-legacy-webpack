@@ -1,6 +1,6 @@
 // import levelTsHtml from './level-ts.component.html';
 // import LevelTsSepController from './level-ts-sep.controller';
-const levelTsSepHtml = require('./level-ts-sep.component.html');
+import * as levelTsSepHtml from './level-ts-sep.component.html';
 
 const LevelTsSepComponent = {
     bindings: {
