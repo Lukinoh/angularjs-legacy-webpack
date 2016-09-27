@@ -22,10 +22,6 @@ gulp.task('push:artifact',
                 return done('Bucket unspecified!');
             }
 
-            if (!argv.buildNumber || !_.isFinite(argv.buildNumber)) {
-                return done('Build number unspecified!');
-            }
-
             // Specify publisher
             publisher = awspublish.create({
                 region: argv.region || 'eu-central-1',
@@ -60,5 +56,10 @@ function saveTo(awsPath) {
 
 
 function getBuildName() {
-    return moment().format('YYYY.MM.DD') + '-b' + argv.buildNumber;
+    const hoursInSeconds = moment.duration(moment().hours(), 'hours').asSeconds();
+    const minutesInSeconds = moment.duration(moment().minutes(), 'minutes').asSeconds();
+    const seconds = moment().seconds();
+    const buildNumber = hoursInSeconds + minutesInSeconds + seconds;
+
+    return moment().format('YYYY.MM.DD') + '-b' + buildNumber;
 }
