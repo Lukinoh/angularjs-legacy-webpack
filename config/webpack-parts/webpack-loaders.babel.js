@@ -213,7 +213,7 @@ export function getFonts(env) {
         module: {
             loaders: [
                 {
-                    test: /\.(eot|svg|ttf|woff|woff2)$/,
+                    test: /\.(eot|svg|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
                     loader: 'file-loader',
                     query: {
                         name: helpers.pathConcat('assets', 'fonts', name + '.[ext]')
