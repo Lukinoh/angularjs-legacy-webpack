@@ -1,5 +1,6 @@
 import ngRoute from 'angular-route';
 import ngSanitize from 'angular-sanitize';
+import permission from 'angular-permission';
 import toastr from 'toastr';
 import _ from 'lodash';
 import goog from './closure/closure'; // This is a hack, we should remove closure in future...
@@ -10,7 +11,9 @@ export default angular
     .module('app.core', [
         blocksLogger,
         ngRoute,
-        ngSanitize
+        ngSanitize,
+        permission.permission,
+        permission.ngPermission
     ])
     .config(setRoute)
     .constant('toastr', toastr)

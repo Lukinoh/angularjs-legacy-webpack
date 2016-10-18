@@ -80,5 +80,8 @@
     "webpack-merge": "0.14.1",
     "webpack-validator": "2.2.7",
     "yargs": "5.0.0"
+  },
+  "dependencies": {
+    "angular-permission": "^4.0.6"
   }
 }

@@ -8,17 +8,5 @@
 	},
 	# 1 means warning, 2 means error
 	rules: {
-		property-sort-order: [
-			1,
-			{
-				order: "alphabetical"
-			}
-		],
-		indentation: [
-			2,
-			{
-				size: 4
-			}
-		]
 	}
 }

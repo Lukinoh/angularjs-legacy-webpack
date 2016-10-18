@@ -12,23 +12,43 @@ import appFontZarbi from 'app/components/font-zarbi/font-zarbi.module';
 import appMiscellaneous from 'app/components/miscellaneous/miscellaneous.module';
 import appBootstrapSass from 'app/components/bootstrap-sass/bootstrap-sass.module';
 import appMusic from 'app/components/music/music.module';
+import appSession from 'app/shared/services/session/session.module';
 
 export default angular
-    .module('app', [
-        appCore,
-        appWidgets,
-        appDashboardEs5,
-        appDashboardEs6,
-        appDashboardTs,
-        appDashboardNgIncluded,
-        appImageSelectorEs6,
-        appImageSelectorRequire,
-        appImageSelectorRequire,
-        appGoogleClosure,
-        appHome,
-        appFontZarbi,
-        appMiscellaneous,
-        appBootstrapSass,
-        appMusic
-    ])
-    .name;
+  .module('app', [
+    appSession,
+    appCore,
+    appWidgets,
+    appDashboardEs5,
+    appDashboardEs6,
+    appDashboardTs,
+    appDashboardNgIncluded,
+    appImageSelectorEs6,
+    appImageSelectorRequire,
+    appImageSelectorRequire,
+    appGoogleClosure,
+    appHome,
+    appFontZarbi,
+    appMiscellaneous,
+    appBootstrapSass,
+    appMusic
+  ])
+  .run((PermRoleStore, UserService, _) => {
+    'ngInject';
+
+    const userRoles = UserService.getUser2().roles;
+    //console.log('User: ' + _.includes(userRoles, 'USER'));
+    //console.log('Admin: ' + _.includes(userRoles, 'ADMIN'));
+
+
+
+    PermRoleStore
+    // Or use your own function/service to validate role
+      .defineManyRoles({
+        'USER': () => _.includes(userRoles, 'USER'),
+        'USERF': () => _.includes(userRoles, 'USERF'),
+        'ADMIN': () => _.includes(userRoles, 'ADMIN'),
+        'SUPERUSER': () => _.includes(userRoles, 'SUPERUSER')
+      });
+  })
+  .name;
