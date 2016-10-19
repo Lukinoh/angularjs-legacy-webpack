@@ -14,21 +14,21 @@ import appBootstrapSass from 'app/components/bootstrap-sass/bootstrap-sass.modul
 import appMusic from 'app/components/music/music.module';
 
 export default angular
-    .module('app', [
-        appCore,
-        appWidgets,
-        appDashboardEs5,
-        appDashboardEs6,
-        appDashboardTs,
-        appDashboardNgIncluded,
-        appImageSelectorEs6,
-        appImageSelectorRequire,
-        appImageSelectorRequire,
-        appGoogleClosure,
-        appHome,
-        appFontZarbi,
-        appMiscellaneous,
-        appBootstrapSass,
-        appMusic
-    ])
-    .name;
+  .module('app', [
+    appCore,
+    appWidgets,
+    appDashboardEs5,
+    appDashboardEs6,
+    appDashboardTs,
+    appDashboardNgIncluded,
+    appImageSelectorEs6,
+    appImageSelectorRequire,
+    appImageSelectorRequire,
+    appGoogleClosure,
+    appHome,
+    appFontZarbi,
+    appMiscellaneous,
+    appBootstrapSass,
+    appMusic
+  ])
+  .name;

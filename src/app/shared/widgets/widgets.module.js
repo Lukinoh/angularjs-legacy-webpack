@@ -7,13 +7,13 @@ import widgetLevelTs from './level-ts/level-ts.module';
 import widgetLevelTsSep from './level-ts-sep/level-ts-sep.module';
 
 export default angular
-    .module('app.widgets', [
-        widgetRating,
-        widgetLevelEs5,
-        widgetLevelEs5Sep,
-        widgetLevelEs6,
-        widgetLevelEs6Sep,
-        widgetLevelTs,
-        widgetLevelTsSep
-    ])
-    .name;
+  .module('app.widgets', [
+    widgetRating,
+    widgetLevelEs5,
+    widgetLevelEs5Sep,
+    widgetLevelEs6,
+    widgetLevelEs6Sep,
+    widgetLevelTs,
+    widgetLevelTsSep
+  ])
+  .name;

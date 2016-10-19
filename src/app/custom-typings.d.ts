@@ -1,5 +1,5 @@
 declare namespace MY {
-    type AWESOME_STRING = string;
+  type AWESOME_STRING = string;
 }
 
 // Old way to make possible to require html file in typescript

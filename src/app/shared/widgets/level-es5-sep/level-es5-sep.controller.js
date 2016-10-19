@@ -1,16 +1,16 @@
 export default LevelEs5SepController;
 
 function LevelEs5SepController(_) {
-    'ngInject';
-    const vm = this;
+  'ngInject';
+  const vm = this;
 
-    vm.getLevel = getLevel;
+  vm.getLevel = getLevel;
 
-    ////////////////
+  // //////////////
 
-    const level = _.random(vm.max);
+  const level = _.random(vm.max);
 
-    function getLevel() {
-        return level;
-    }
+  function getLevel() {
+    return level;
+  }
 }

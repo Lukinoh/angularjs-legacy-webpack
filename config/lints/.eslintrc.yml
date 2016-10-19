@@ -54,7 +54,7 @@
     accessor-pairs: "off",
     array-callback-return: "warn",
     block-scoped-var: "warn",
-    class-methods-use-this: "warn",
+    class-methods-use-this: "off", # Not compatible with Angular, because if function is called in template, the static will break the automatic link to this
     complexity: "off", # Should look  in practice if this rule is usable
     consistent-return: "off",
     curly: ["warn", "all"],
@@ -98,7 +98,7 @@
     no-proto: "warn",
     no-redeclare: "warn",
     no-restricted-properties: "off", # Maybe we should look at what other people do for that
-    no-return-assign: "warn", # Could break a lot of thing in some project!
+    no-return-assign: "off", # Because: promise.then(result => vm.result = result); trigger the error https://github.com/eslint/eslint/issues/5150
     no-script-url: "warn",
     no-self-assign: "warn",
     no-self-compare: "warn",
@@ -116,6 +116,88 @@
     radix: "warn",
     vars-on-top: "warn",
     wrap-iife: "off", # Do not need it with Webpack
-    yoda: "warn"
+    yoda: "warn",
+
+    ## Node.js and CommonJS
+    # TODO
+
+    ## Stylistic Issues
+    array-bracket-spacing: "error",
+    block-spacing: "error",
+    brace-style: ["error", "1tbs", { allowSingleLine: false }], # Could break a lot of thing in some project!
+    camelcase: "error",
+    comma-spacing: "error",
+    comma-style: "error",
+    computed-property-spacing: "error",
+    consistent-this: ["error", "vm", "_this"],
+    eol-last: "error",
+    func-call-spacing: "error",
+    func-name-matching: "off",
+    func-names: "off",
+    func-style: "off",
+    id-blacklist: "off",
+    id-length: "off",
+    id-match: "off",
+    indent: ["error", 2, { "SwitchCase": 1 }],
+    jsx-quotes: "off",
+    key-spacing: "error",
+    keyword-spacing: "error",
+    line-comment-position: "off", # We want above and beside
+    lines-around-comment: "error", # Maybe, we can disable it
+    linebreak-style: "error",
+    lines-around-directive: "off",
+    max-depth: ["error", 7],
+    max-len: ["error", 180, 2, { ignoreUrls: true, ignoreComments: false, ignoreTrailingComments: true, ignoreStrings: true, ignoreTemplateLiterals: true }], # The first idea was 200 max, have to see
+    max-lines: ["error", { max: 300, skipBlankLines: true, skipComments: true }],
+    max-nested-callbacks: ["error", 3], # 3 Could be a little bit low, increase it to off if necessary
+    max-params: ["error", 10], # Because of Angular injection, this rules maybe should be disabled
+    max-statements-per-line: ["error", { max: 1 }],
+    multiline-ternary: ["error", "never"],
+    new-cap: ["error", {capIsNew: false}],
+    new-parens: "error",
+    newline-after-var: "off",
+    newline-before-return: "off",
+    newline-per-chained-call: ["error", { ignoreChainWithDepth: 2 }], # Increase value to 4 ?
+    no-array-constructor: "error",
+    no-bitwise: "error",
+    no-continue: "error",
+    no-inline-comments: "off",
+    no-lonely-if: "error",
+    no-mixed-operators: ["error", { groups: [["+", "-", "*", "/", "%", "**"], ["&", "|", "^", "~", "<<", ">>", ">>>"], ["==", "!=", "===", "!==", ">", ">=", "<", "<="], ["&&", "||"], ["in", "instanceof"]], allowSamePrecedence: false }], # Could break a lot of thing in some project! (Disable it if too many modifications)
+    no-mixed-spaces-and-tabs: "error",
+    no-multiple-empty-lines: ["error", { max: 1, maxEOF: 1 }], # Maybe we could switch to max of 2
+    no-negated-condition: "off",
+    no-nested-ternary: "error",
+    no-new-object: "error",
+    no-plusplus: "off",
+    no-restricted-syntax: ["error", "ForInStatement",  "ForOfStatement", "LabeledStatement", "WithStatement"], # This list is subject to changes and adaptation
+    no-tabs: "error",
+    no-ternary: "off",
+    no-trailing-spaces: "error",
+    no-underscore-dangle: "off",
+    no-unneeded-ternary: "error",
+    no-whitespace-before-property: "error",
+    object-curly-newline: "off",
+    object-curly-spacing: "off", # Should be careful, because IDE have their own formating on this rule
+    one-var-declaration-per-line: "off",
+    one-var: ["error", "never"],
+    operator-assignment: "off",
+    operator-linebreak: ["error", "before"], # Could be changed if needed
+    padded-blocks: "off",
+    quote-props: ["error", "as-needed", { keywords: true, unnecessary: true, numbers: false }],
+    quotes: ["error", "single"],
+    require-jsdoc: "off",
+    semi-spacing: "error",
+    semi: ["error", "always"],
+    sort-keys: ["off", "asc", { caseSensitive: false, natural: true }], # Not always meaningful
+    sort-vars: "off",
+    space-before-blocks: "error",
+    space-before-function-paren: ["error", "never"],
+    space-in-parens: "off",
+    space-infix-ops: "error",
+    space-unary-ops: ["error", { words: true, nonwords: false }],
+    spaced-comment: ["error", "always", { exceptions: ["*"] }],
+    unicode-bom: "error",
+    wrap-regex: "off"
   }
 }
