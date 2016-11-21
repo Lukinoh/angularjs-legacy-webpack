@@ -119,7 +119,18 @@
     yoda: "warn",
 
     ## Node.js and CommonJS
-    # TODO
+    # We decided to off all these rules, because we are not writing Node.js and CommonJS
+    # However, these rules could be applicable in a few cases. If needed to a pull request with the modification
+    callback-return: "off",
+    global-require: "off",
+    handle-callback-err: "off",
+    no-mixed-requires: "off",
+    no-new-require: "off",
+    no-path-concat: "off",
+    no-process-env: "off",
+    no-process-exit: "off",
+    no-restricted-modules: "off",
+    no-sync: "off",
 
     ## Stylistic Issues
     array-bracket-spacing: "warn",
