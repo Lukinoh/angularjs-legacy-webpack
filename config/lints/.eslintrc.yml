@@ -209,6 +209,38 @@
     space-unary-ops: ["warn", { words: true, nonwords: false }],
     spaced-comment: ["warn", "always", { exceptions: ["*"] }],
     unicode-bom: "warn",
-    wrap-regex: "off"
+    wrap-regex: "off",
+
+    ## ECMAScript 6
+    arrow-body-style: ["warn", "as-needed"],
+    arrow-parens: ["warn", "as-needed"],
+    arrow-spacing: ["warn", { "before": true, "after": true }],
+    constructor-super: "warn",
+    generator-star-spacing: ["warn", {"before": true, "after": false}], # Chosen randomly, but fixing one syntax seems useful
+    no-class-assign: "warn",
+    no-confusing-arrow: "off",
+    no-const-assign: "warn",
+    no-dupe-class-members: "warn",
+    no-duplicate-imports: "warn",
+    no-new-symbol: "warn",
+    no-restricted-imports: "off", # We should be aware of what we can import or not
+    no-this-before-super: "warn",
+    no-useless-computed-key: "warn",
+    no-useless-constructor: "warn",
+    no-useless-rename: "warn",
+    no-var: "warn",
+    object-shorthand: "off", # Look together
+    prefer-arrow-callback: ["warn", { "allowNamedFunctions": true }]
+    prefer-const: "warn", # Ask for opinion
+    prefer-numeric-literals: "off",
+    prefer-rest-params: "warn",
+    prefer-spread: "warn",
+    prefer-template: "off",
+    require-yield: "warn",
+    rest-spread-spacing: ["warn", "never"],
+    sort-imports: "off",
+    symbol-description: "warn",
+    template-curly-spacing: ["error", "never"],
+    yield-star-spacing: ["warn", {"before": true, "after": false}], # Chosen randomly, but fixing one syntax seems useful
   }
 }
